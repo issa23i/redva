@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './ilp.scss',
 })
 export class Ilp {
-
+  protected readonly heroImage = 'assets/redva/ilp-hero.png';
+  protected readonly urbanImage = 'assets/redva/ilp-urban.png';
+  protected readonly communityImage = 'assets/redva/ilp-community.png';
+  protected readonly collaborators = ['FACUA', 'CCOO', 'UGT', 'Andalucia'];
 }

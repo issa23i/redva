@@ -1,1 +1,46 @@
-<p>listado works!</p>
+<main class="section section--soft news-page">
+  <div class="app-container">
+    @if (featuredArticle) {
+      <article class="featured-news">
+        <div class="featured-news__image">
+          <img [src]="featuredArticle.image" [alt]="featuredArticle.title" />
+          <span class="badge badge--blue">Destacado</span>
+        </div>
+        <div class="featured-news__body">
+          <span class="eyebrow">{{ featuredArticle.category }}</span>
+          <h1>{{ featuredArticle.title }}</h1>
+          <p>{{ featuredArticle.excerpt }}</p>
+          <a class="button button--primary" [routerLink]="['/noticias', featuredArticle.slug]">Leer mas</a>
+        </div>
+      </article>
+    }
+
+    <hr class="soft-divider" />
+
+    <div class="news-grid">
+      @for (article of articles; track article.slug) {
+        <article class="news-card">
+          <img [src]="article.image" [alt]="article.title" />
+          <div class="news-card__body">
+            <div class="news-card__meta">
+              <span class="badge">{{ article.category }}</span>
+              <time>{{ article.date }}</time>
+            </div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.excerpt }}</p>
+            <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer articulo</a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <nav class="pagination" aria-label="Paginacion">
+      <a aria-label="Pagina anterior">‹</a>
+      <a class="is-current">1</a>
+      <a>2</a>
+      <a>3</a>
+      <span>...</span>
+      <a aria-label="Pagina siguiente">›</a>
+    </nav>
+  </div>
+</main>

@@ -1,1 +1,59 @@
-<p>detalle works!</p>
+<main class="section section--soft article-page">
+  <div class="app-container article-layout">
+    <article class="article-content">
+      <a class="back-link" routerLink="/noticias">← Volver al listado</a>
+      <div class="article-kicker">
+        <span class="badge badge--blue">{{ article.category }}</span>
+        @if (article.province) {
+          <span class="badge">{{ article.province }}</span>
+        }
+        <time>{{ article.date }}</time>
+      </div>
+      <h1>{{ article.title }}</h1>
+      <img class="article-hero" [src]="article.image" [alt]="article.title" />
+      <p class="lead">{{ article.excerpt }}</p>
+      @for (paragraph of article.body; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+      <blockquote>
+        La fuerza de RedVA reside en su capacidad para unir la voz de cada barrio andaluz en una sola demanda
+        institucional.
+      </blockquote>
+      <h2>Consolidacion del Derecho a la Vivienda</h2>
+      <p>
+        Los representantes coinciden en que el encarecimiento del alquiler y la proliferacion descontrolada de pisos
+        turisticos fracturan el tejido social de nuestros centros historicos y barrios perifericos.
+      </p>
+      <h2>Retos Urbanos y Emergencia Social</h2>
+      <p>
+        RedVA exigira planes de choque especificos para las zonas con necesidades de transformacion social, asegurando
+        que la transicion ecologica de nuestras ciudades no deje a ningun vecino atras.
+      </p>
+      <footer class="article-actions">
+        <div>
+          <span>Compartir:</span>
+          <button type="button">link</button>
+          <button type="button">mail</button>
+          <button type="button">print</button>
+        </div>
+        <a class="button button--outline" href="assets/redva/news-asamblea.png" download>Descargar acta</a>
+      </footer>
+    </article>
+
+    <aside class="article-sidebar">
+      <h2>Otras noticias</h2>
+      <img [src]="sidebarImage" alt="Espacio civico andaluz" />
+      @for (related of relatedArticles; track related.slug) {
+        <article>
+          <span class="eyebrow">{{ related.category }}</span>
+          <h3>
+            <a [routerLink]="['/noticias', related.slug]">{{ related.title }}</a>
+          </h3>
+          <p>{{ related.excerpt }}</p>
+          <time>{{ related.date }}</time>
+        </article>
+      }
+      <a class="button button--outline button--full" routerLink="/noticias">Ver todas las noticias</a>
+    </aside>
+  </div>
+</main>

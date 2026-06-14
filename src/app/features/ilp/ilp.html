@@ -1,1 +1,81 @@
-<p>ilp works!</p>
+<main>
+  <section class="ilp-hero section--soft">
+    <div class="app-container ilp-hero__grid">
+      <div>
+        <span class="badge badge--blue">Iniciativa Ciudadana</span>
+        <h1>Iniciativa Legislativa Popular (ILP) por una <span>Vivienda Digna</span></h1>
+        <p>
+          Andalucia se enfrenta a una emergencia habitacional sin precedentes. Es hora de que la ciudadania tome la
+          palabra para garantizar el derecho constitucional a un hogar.
+        </p>
+        <div class="button-row">
+          <a class="button button--primary" href="#firmar">Firmar la Iniciativa</a>
+          <a class="button button--outline" href="#ley">Descargar Ley</a>
+        </div>
+      </div>
+      <figure class="framed-image">
+        <img [src]="heroImage" alt="Viviendas andaluzas bajo el sol" />
+      </figure>
+    </div>
+  </section>
+
+  <section id="ley" class="section section--soft">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Que no te cuenten peliculas</h2>
+        <p>Analizamos la situacion real y proponemos soluciones valientes.</p>
+      </div>
+      <article class="split-panel">
+        <div>
+          <h3>Proposicion de Ley de Garantia Habitacional y Funcion Social</h3>
+          <p>
+            Proponemos blindar el derecho a techo por encima del lucro, obligando a las administraciones a actuar
+            frente a la especulacion inmobiliaria.
+          </p>
+          <ul class="check-list">
+            <li>Regulacion de precios de alquiler</li>
+            <li>Paralizacion de desahucios sin alternativa</li>
+            <li>Movilizacion de viviendas vacias</li>
+          </ul>
+        </div>
+        <img [src]="urbanImage" alt="Edificio urbano en blanco y negro" />
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container ilp-info-grid">
+      <article class="info-card info-card--blue">
+        <span>?</span>
+        <h3>¿Que es la ILP?</h3>
+        <p>Es la herramienta constitucional que permite a la ciudadania proponer leyes directamente al Parlamento.</p>
+      </article>
+      <article class="info-card info-card--image">
+        <div>
+          <h3>Objetivos de la Ley</h3>
+          <p>Buscamos blindar el derecho a techo y obligar a las administraciones a actuar.</p>
+        </div>
+        <img [src]="communityImage" alt="Espacio comunitario luminoso" />
+      </article>
+      <article class="info-card">
+        <h3>Como participar</h3>
+        <p>Unete a las asambleas locales, ayuda en la recogida de firmas o difunde nuestra campana.</p>
+      </article>
+      <article id="firmar" class="signature-card">
+        <h3>Necesitamos 40.000 firmas</h3>
+        <div class="progress"><span></span></div>
+        <p>¡Llevamos el 65%! Tu firma es decisiva.</p>
+        <a class="button button--lime" href="mailto:contacto@redva.es">Firmar Digitalmente</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="collaborators">
+    <p>En colaboracion con</p>
+    <div>
+      @for (collaborator of collaborators; track collaborator) {
+        <span>{{ collaborator }}</span>
+      }
+    </div>
+  </section>
+</main>
