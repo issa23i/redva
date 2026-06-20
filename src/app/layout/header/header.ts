@@ -11,7 +11,7 @@ import { federations, navLinks } from '../../shared/redva.data';
 export class Header {
   protected readonly navLinks = navLinks;
   protected readonly federations = federations;
-  protected readonly logoPath = 'assets/redva/logo-redva.png';
+  protected readonly logoPath = 'assets/redva/logo-redva.svg';
   protected menuOpen = false;
 
   protected toggleMenu(): void {
