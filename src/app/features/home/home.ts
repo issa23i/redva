@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { latestFederationNews, newsArticles, socialGoals } from '../../shared/redva.data';
+import { aboutIntro, latestFederationNews, newsArticles, socialGoals } from '../../shared/redva.data';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +9,7 @@ import { latestFederationNews, newsArticles, socialGoals } from '../../shared/re
   styleUrl: './home.scss',
 })
 export class Home {
+  protected readonly aboutIntro = aboutIntro;
   protected readonly goals = socialGoals;
   protected readonly latestNews = latestFederationNews;
   protected readonly featuredNews = newsArticles.find((article) => article.featured);

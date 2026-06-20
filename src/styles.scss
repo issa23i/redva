@@ -200,6 +200,11 @@ app-root {
   text-decoration: none;
 }
 
+.text-link--spaced {
+  display: inline-block;
+  margin-top: 1.35rem;
+}
+
 .badge {
   background: var(--color-surface-container);
   color: var(--color-on-surface-variant);
@@ -298,12 +303,17 @@ app-root {
   border-radius: 8px;
   color: var(--accent);
   display: inline-grid;
-  font-size: 0.72rem;
-  font-weight: 800;
   min-height: 48px;
   min-width: 48px;
   padding: 0.55rem;
   place-items: center;
+}
+
+.icon-pill svg {
+  display: block;
+  fill: currentColor;
+  height: 26px;
+  width: 26px;
 }
 
 .news-grid {
@@ -401,6 +411,77 @@ app-root {
   height: 72px;
   object-fit: contain;
   width: 72px;
+}
+
+.about-layout {
+  align-items: start;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.about-lead h2 {
+  font-size: clamp(2rem, 3.6vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.about-lead p + p {
+  margin-top: 1rem;
+}
+
+.about-stats {
+  background: var(--color-primary);
+  border-radius: 8px;
+  color: white;
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.about-stats div {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.35rem;
+}
+
+.about-stats strong,
+.about-stats span {
+  display: block;
+}
+
+.about-stats strong {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.about-stats span {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+  margin-top: 0.35rem;
+}
+
+.about-section-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-section-card {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.about-section-card h2 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.about-section-card p + p {
+  margin-top: 1rem;
 }
 
 .ilp-hero {
@@ -824,7 +905,9 @@ app-root {
   .ilp-hero__grid,
   .split-panel,
   .featured-news,
-  .article-layout {
+  .article-layout,
+  .about-layout,
+  .about-section-grid {
     grid-template-columns: 1fr;
   }
 

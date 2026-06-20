@@ -1,1 +1,69 @@
-<p>quienes-somos works!</p>
+<main>
+  <section class="hero hero--compact">
+    <img class="hero__image" [src]="heroImage" alt="Representantes vecinales de Andalucía" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content app-container">
+      <span class="eyebrow">Quiénes somos</span>
+      <h1>Confederación de Asociaciones Vecinales de Andalucía</h1>
+      <p>AAVV - Asociaciones de vecinos y vecinas. RED VECINAL ANDALUZA.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container about-layout">
+      <div class="about-lead">
+        <h2>RED VECINAL ANDALUZA</h2>
+        <span class="section-rule"></span>
+        @for (paragraph of intro; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+
+      <aside class="about-stats" aria-label="Datos principales de RedVA">
+        @for (stat of stats; track stat.value) {
+          <div>
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </div>
+        }
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="app-container about-section-grid">
+      @for (section of sections; track section.title) {
+        <article class="about-section-card">
+          <h2>{{ section.title }}</h2>
+          @for (paragraph of section.body; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Objetivos y fines sociales</h2>
+        <p>Ámbitos prioritarios de actuación de la Confederación.</p>
+      </div>
+      <div class="goal-grid">
+        @for (goal of goals; track goal.title) {
+          <article class="goal-card" [style.--accent]="goal.accent">
+            <span class="icon-pill" aria-hidden="true">
+              <svg [attr.viewBox]="goal.icon.viewBox" focusable="false">
+                @for (path of goal.icon.paths; track path) {
+                  <path [attr.d]="path"></path>
+                }
+              </svg>
+            </span>
+            <h3>{{ goal.title }}</h3>
+            <p>{{ goal.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>

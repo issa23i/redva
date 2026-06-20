@@ -3,11 +3,12 @@
     <img class="hero__image" [src]="heroImage" alt="Representantes vecinales andaluces" />
     <div class="hero__overlay"></div>
     <div class="hero__content app-container">
-      <h1>Confederacion RED VECINAL ANDALUZA (RedVA)</h1>
-      <p>Entidad de interes general y participacion ciudadana comprometida con los derechos sociales en Andalucia.</p>
+      <span class="eyebrow">Federaciones</span>
+      <h1>Entidades federadas de la Red Vecinal Andaluza</h1>
+      <p>Confederaciones y federaciones territoriales de asociaciones vecinales integradas en RedVA.</p>
       <div class="button-row">
-        <a class="button button--secondary" routerLink="/federaciones" fragment="directorio">Conocenos</a>
-        <a class="button button--outline" routerLink="/federaciones" fragment="directorio">Federaciones</a>
+        <a class="button button--secondary" routerLink="/federaciones" fragment="directorio">Ver directorio</a>
+        <a class="button button--outline" routerLink="/quienes-somos">Quiénes somos</a>
       </div>
     </div>
   </section>
@@ -15,11 +16,11 @@
   <section id="directorio" class="section section--white">
     <div class="app-container">
       <div class="section-heading center">
-        <h2>Nuestras Federaciones Miembro</h2>
+        <h2>Nuestras federaciones miembro</h2>
         <span class="section-rule"></span>
         <p>
-          La RedVA aglutina a las principales organizaciones vecinales de Andalucia, trabajando coordinadamente para
-          mejorar nuestros barrios.
+          La RedVA aglutina organizaciones vecinales de Andalucía que trabajan coordinadamente para defender derechos,
+          participación ciudadana y calidad de vida en los barrios.
         </p>
       </div>
       <div class="federation-grid">
@@ -37,6 +38,9 @@
             @if (federation.email) {
               <p class="meta">{{ federation.email }}</p>
             }
+            @if (federation.website) {
+              <p class="meta">{{ federation.website }}</p>
+            }
             <span>Miembro CEAV</span>
           </article>
         }
@@ -44,10 +48,10 @@
       <aside class="ceav-callout">
         <img [src]="ceavLogo" alt="CEAV" />
         <div>
-          <h3>Compromiso Estatal</h3>
+          <h3>Confederación Estatal de Asociaciones Vecinales</h3>
           <p>
-            Como parte integrante de la CEAV, la RedVA traslada las reivindicaciones de los vecinos andaluces al ambito
-            nacional.
+            RedVA forma parte del movimiento vecinal estatal y traslada las reivindicaciones de las asociaciones
+            andaluzas al ámbito nacional.
           </p>
         </div>
       </aside>
@@ -55,40 +59,11 @@
   </section>
 
   <section class="section section--soft">
-    <div class="app-container narrow center">
-      <h2>¿Que es la RedVA?</h2>
-      <span class="section-rule"></span>
-      <p>
-        Somos una organizacion sin animo de lucro, una Confederacion de Federaciones territoriales de asociaciones
-        vecinales de Andalucia.
-      </p>
-    </div>
-  </section>
-
-  <section class="section section--white">
-    <div class="app-container">
-      <div class="section-heading center">
-        <h2>Objetivos y Fines Sociales</h2>
-        <p>Nuestros pilares fundamentales para una Andalucia mejor</p>
-      </div>
-      <div class="goal-grid">
-        @for (goal of goals; track goal.title) {
-          <article class="goal-card" [style.--accent]="goal.accent">
-            <span class="icon-pill">{{ goal.icon }}</span>
-            <h3>{{ goal.title }}</h3>
-            <p>{{ goal.description }}</p>
-          </article>
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--soft">
     <div class="app-container">
       <div class="section-heading section-heading--split">
         <div>
-          <h2>Ultimas Noticias</h2>
-          <p>Actualidad sobre el movimiento vecinal andaluz</p>
+          <h2>Últimas noticias</h2>
+          <p>Actualidad sobre el movimiento vecinal andaluz.</p>
         </div>
         <a class="text-link" routerLink="/noticias">Ver todas</a>
       </div>
@@ -101,7 +76,7 @@
               <time>{{ article.date }}</time>
               <h3>{{ article.title }}</h3>
               <p>{{ article.excerpt }}</p>
-              <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer mas</a>
+              <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer más</a>
             </div>
           </article>
         }

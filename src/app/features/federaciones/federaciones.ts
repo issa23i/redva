@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { federations, latestFederationNews, socialGoals } from '../../shared/redva.data';
+import { federations, latestFederationNews } from '../../shared/redva.data';
 
 @Component({
   selector: 'app-federaciones',
@@ -10,7 +10,6 @@ import { federations, latestFederationNews, socialGoals } from '../../shared/red
 })
 export class Federaciones {
   protected readonly federations = federations;
-  protected readonly goals = socialGoals;
   protected readonly latestNews = latestFederationNews;
   protected readonly heroImage = 'assets/redva/hero-community.png';
   protected readonly ceavLogo = 'assets/redva/logo-ceav.png';
