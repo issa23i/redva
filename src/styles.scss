@@ -580,6 +580,9 @@ app-root {
 }
 
 .info-card--blue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #087b9d;
   color: white;
 }
