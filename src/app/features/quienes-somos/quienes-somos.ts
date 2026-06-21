@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { CeavCallout } from '../../shared/ceav-callout/ceav-callout';
 import { aboutIntro, aboutSections, aboutStats, socialGoals } from '../../shared/redva.data';
 
 @Component({
   selector: 'app-quienes-somos',
-  imports: [],
+  imports: [CeavCallout],
   templateUrl: './quienes-somos.html',
   styleUrl: './quienes-somos.scss',
 })
