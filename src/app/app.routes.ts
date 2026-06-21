@@ -5,6 +5,7 @@ import { Home } from './features/home/home';
 import { Ilp } from './features/ilp/ilp';
 import { Detalle } from './features/noticias/detalle/detalle';
 import { Listado } from './features/noticias/listado/listado';
+import { Privacidad } from './features/privacidad/privacidad';
 import { QuienesSomos } from './features/quienes-somos/quienes-somos';
 
 export const routes: Routes = [
@@ -77,6 +78,19 @@ export const routes: Routes = [
     path: 'contacto',
     redirectTo: '',
     pathMatch: 'full',
+  },
+  {
+    path: 'privacidad',
+    component: Privacidad,
+    title: 'Privacidad - RedVA',
+    data: {
+      seo: {
+        title: 'Privacidad',
+        description:
+          'Informacion sobre privacidad, proteccion de datos y uso de almacenamiento local en la web de Red Vecinal Andaluza.',
+        keywords: ['privacidad RedVA', 'proteccion de datos', 'cookies RedVA'],
+      },
+    },
   },
   {
     path: 'noticias',
