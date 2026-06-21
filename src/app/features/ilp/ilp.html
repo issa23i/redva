@@ -13,14 +13,27 @@
           derecho constitucional a un hogar.
         </p>
         <div class="button-row">
+          <!-- 
+        TODO: LINK FIRMA 
           <a class="button button--primary" href="#firmar"
             >Firmar la Iniciativa</a
           >
           <a class="button button--outline" href="#ley">Descargar Ley</a>
+        
+      -->
+          <a class="button button--primary" href="/ilp-vivienda"
+            >Firmar la Iniciativa</a
+          >
+          <a class="button button--outline" href="/ilp-vivienda"
+            >Descargar Ley</a
+          >
         </div>
       </div>
       <figure class="framed-image">
-        <img [src]="heroImage" alt="Viviendas andaluzas bajo el sol" />
+        <img
+          [src]="heroImage"
+          alt="Representantes sociales registrando la ILP por una vivienda digna"
+        />
       </figure>
     </div>
   </section>
@@ -79,7 +92,13 @@
       <article id="firmar" class="signature-card">
         <h3>Necesitamos 40.000 firmas</h3>
         <p>Tu firma es decisiva.</p>
+        <!-- 
+        TODO: LINK FIRMA 
         <a class="button button--lime" href="mailto:contacto@redva.es"
+          >Firmar Digitalmente</a
+        >
+        -->
+        <a class="button button--lime" href="/ilp-vivienda"
           >Firmar Digitalmente</a
         >
       </article>
@@ -89,8 +108,15 @@
   <section class="collaborators">
     <p>En colaboracion con</p>
     <div>
-      @for (collaborator of collaborators; track collaborator) {
-        <span>{{ collaborator }}</span>
+      @for (collaborator of collaborators; track collaborator.image) {
+        <a
+          class="collaborators__logo"
+          [href]="collaborator.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img [src]="collaborator.image" [alt]="collaborator.alt" />
+        </a>
       }
     </div>
   </section>
