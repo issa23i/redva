@@ -5,7 +5,10 @@
         <img [src]="logoPath" alt="RedVA" />
         <span>RedVA</span>
       </div>
-      <p>Trabajando por una Andalucia mas justa, participativa y conectada a traves del movimiento vecinal.</p>
+      <p>
+        Trabajando por una Andalucia mas justa, participativa y conectada a
+        traves del movimiento vecinal.
+      </p>
       <div class="social-links" aria-label="Redes sociales">
         <a href="mailto:contacto@redva.es" aria-label="Correo">mail</a>
         <a href="#" aria-label="Compartir">share</a>
@@ -17,7 +20,9 @@
       <h2>Federaciones</h2>
       <div class="footer-grid">
         @for (federation of federations; track federation.province) {
-          <a routerLink="/federaciones" fragment="directorio">{{ federation.province }}</a>
+          <a routerLink="/federaciones" fragment="directorio">{{
+            federation.province
+          }}</a>
         }
       </div>
     </section>
@@ -40,6 +45,14 @@
   </div>
 
   <div class="site-footer__legal app-container">
-    <span>© 2024 Confederacion RED VECINAL ANDALUZA (RedVA). Todos los derechos reservados.</span>
+    <span
+      >© 2024 Confederacion RED VECINAL ANDALUZA (RedVA). Todos los derechos
+      reservados.</span
+    >
+    <div>
+      <a href="https://isabelpastorlopez.com/"
+        >Web realizada por Isabel Pastor López</a
+      >
+    </div>
   </div>
 </footer>
