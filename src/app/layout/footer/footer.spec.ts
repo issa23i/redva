@@ -22,4 +22,12 @@ describe('Footer', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should expose an accessibility panel trigger', () => {
+    const accessibilityButton: HTMLButtonElement | null =
+      fixture.nativeElement.querySelector('.footer-link-button');
+
+    expect(accessibilityButton).not.toBeNull();
+    expect(accessibilityButton?.textContent?.trim()).toBe('Accesibilidad');
+  });
 });

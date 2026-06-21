@@ -1,0 +1,50 @@
+<section class="accessibility-widget" aria-label="Opciones de accesibilidad">
+  <button
+    class="accessibility-widget__toggle"
+    type="button"
+    aria-label="Abrir opciones de accesibilidad"
+    aria-controls="accessibility-panel"
+    [attr.aria-expanded]="menuOpen"
+    (click)="toggleMenu()"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+      <path d="M4.5 7.2c0-.8.7-1.4 1.5-1.3l4.3.6c1.1.2 2.3.2 3.4 0l4.3-.6c.8-.1 1.5.5 1.5 1.3 0 .7-.5 1.2-1.1 1.3l-4 .6v3.1l1.9 6.6c.2.8-.2 1.6-1 1.8-.7.2-1.5-.2-1.7-.9L12 14.2l-1.6 5.5c-.2.7-1 1.1-1.7.9-.8-.2-1.2-1-1-1.8l1.9-6.6V9.1l-4-.6c-.6-.1-1.1-.6-1.1-1.3Z" />
+    </svg>
+  </button>
+
+  @if (menuOpen) {
+    <div id="accessibility-panel" class="accessibility-widget__panel">
+      <div class="accessibility-widget__header">
+        <h2>Accesibilidad</h2>
+        <button id="accessibility-panel-close" type="button" aria-label="Cerrar opciones de accesibilidad" (click)="toggleMenu()">x</button>
+      </div>
+
+      <div class="accessibility-widget__group" role="group" aria-label="Tamano del texto">
+        <span>Tama&ntilde;o del texto</span>
+        <div class="accessibility-widget__segmented">
+          <button type="button" [attr.aria-pressed]="settings.textScale === 'normal'" (click)="setTextScale('normal')">A</button>
+          <button type="button" [attr.aria-pressed]="settings.textScale === 'large'" (click)="setTextScale('large')">A+</button>
+          <button type="button" [attr.aria-pressed]="settings.textScale === 'larger'" (click)="setTextScale('larger')">A++</button>
+        </div>
+      </div>
+
+      <button class="accessibility-widget__option" type="button" [attr.aria-pressed]="settings.contrast" (click)="toggleContrast()">
+        <span>Alto contraste</span>
+        <strong>{{ settings.contrast ? 'Activo' : 'Inactivo' }}</strong>
+      </button>
+
+      <button class="accessibility-widget__option" type="button" [attr.aria-pressed]="settings.underlineLinks" (click)="toggleUnderlineLinks()">
+        <span>Subrayar enlaces</span>
+        <strong>{{ settings.underlineLinks ? 'Activo' : 'Inactivo' }}</strong>
+      </button>
+
+      <button class="accessibility-widget__option" type="button" [attr.aria-pressed]="settings.reduceMotion" (click)="toggleReduceMotion()">
+        <span>Reducir movimiento</span>
+        <strong>{{ settings.reduceMotion ? 'Activo' : 'Inactivo' }}</strong>
+      </button>
+
+      <button class="accessibility-widget__reset" type="button" (click)="resetSettings()">Restablecer</button>
+    </div>
+  }
+</section>

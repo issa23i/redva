@@ -53,6 +53,24 @@
   text-decoration: none;
 }
 
+.footer-link-button {
+  background: transparent;
+  border: 0;
+  color: rgba(244, 240, 239, 0.9);
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  line-height: 1.7;
+  padding: 0;
+  text-align: left;
+}
+
+.footer-link-button:hover,
+.footer-link-button:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .footer-grid {
   display: grid;
   gap: 0.2rem 1.5rem;

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AccessibilityWidgetService } from '../../shared/accessibility-widget/accessibility-widget.service';
 import { federations } from '../../shared/redva.data';
 
 @Component({
@@ -17,4 +18,10 @@ export class Footer {
   protected readonly encodedSiteShareText = encodeURIComponent(
     'RedVA - Red Vecinal Andaluza\n\nTrabajando por una Andalucia mas justa, participativa y conectada a traves del movimiento vecinal.',
   );
+
+  constructor(private readonly accessibilityWidget: AccessibilityWidgetService) {}
+
+  protected openAccessibilityPanel(): void {
+    this.accessibilityWidget.openPanel();
+  }
 }
