@@ -898,9 +898,14 @@ app-root {
   margin-bottom: 1rem;
 }
 
-.article-sidebar > img {
+.article-sidebar__image-link {
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.article-sidebar__image-link img {
   aspect-ratio: 16 / 9;
-  margin-bottom: 1rem;
+  display: block;
   object-fit: cover;
   width: 100%;
 }

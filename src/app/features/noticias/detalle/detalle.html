@@ -1,7 +1,7 @@
 <main class="section section--soft article-page">
   <div class="app-container article-layout">
     <article class="article-content">
-      <a class="back-link" routerLink="/noticias">← Volver al listado</a>
+      <a class="back-link" href="/noticias">← Volver al listado</a>
       <div class="article-kicker">
         <span class="badge badge--blue">{{ article.category }}</span>
         @if (article.province) {
@@ -16,18 +16,20 @@
         <p>{{ paragraph }}</p>
       }
       <blockquote>
-        La fuerza de RedVA reside en su capacidad para unir la voz de cada barrio andaluz en una sola demanda
-        institucional.
+        La fuerza de RedVA reside en su capacidad para unir la voz de cada
+        barrio andaluz en una sola demanda institucional.
       </blockquote>
       <h2>Consolidacion del Derecho a la Vivienda</h2>
       <p>
-        Los representantes coinciden en que el encarecimiento del alquiler y la proliferacion descontrolada de pisos
-        turisticos fracturan el tejido social de nuestros centros historicos y barrios perifericos.
+        Los representantes coinciden en que el encarecimiento del alquiler y la
+        proliferacion descontrolada de pisos turisticos fracturan el tejido
+        social de nuestros centros historicos y barrios perifericos.
       </p>
       <h2>Retos Urbanos y Emergencia Social</h2>
       <p>
-        RedVA exigira planes de choque especificos para las zonas con necesidades de transformacion social, asegurando
-        que la transicion ecologica de nuestras ciudades no deje a ningun vecino atras.
+        RedVA exigira planes de choque especificos para las zonas con
+        necesidades de transformacion social, asegurando que la transicion
+        ecologica de nuestras ciudades no deje a ningun vecino atras.
       </p>
       <footer class="article-actions">
         <div>
@@ -36,24 +38,37 @@
           <button type="button">mail</button>
           <button type="button">print</button>
         </div>
-        <a class="button button--outline" href="assets/redva/news-asamblea.png" download>Descargar acta</a>
       </footer>
     </article>
 
     <aside class="article-sidebar">
       <h2>Otras noticias</h2>
-      <img [src]="sidebarImage" alt="Espacio civico andaluz" />
+      @if (firstRelatedArticle; as preview) {
+        <a
+          class="article-sidebar__image-link"
+          [href]="'/noticias/' + preview.slug"
+          (click)="openArticle($event, preview)"
+        >
+          <img [src]="preview.image" [alt]="preview.title" />
+        </a>
+      }
       @for (related of relatedArticles; track related.slug) {
         <article>
           <span class="eyebrow">{{ related.category }}</span>
           <h3>
-            <a [routerLink]="['/noticias', related.slug]">{{ related.title }}</a>
+            <a
+              [href]="'/noticias/' + related.slug"
+              (click)="openArticle($event, related)"
+              >{{ related.title }}</a
+            >
           </h3>
           <p>{{ related.excerpt }}</p>
           <time>{{ related.date }}</time>
         </article>
       }
-      <a class="button button--outline button--full" routerLink="/noticias">Ver todas las noticias</a>
+      <a class="button button--outline button--full" href="/noticias"
+        >Ver todas las noticias</a
+      >
     </aside>
   </div>
 </main>

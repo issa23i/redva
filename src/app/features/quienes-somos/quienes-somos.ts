@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { aboutIntro, aboutSections, aboutStats, socialGoals } from '../../shared/redva.data';
+import {
+  aboutIntro,
+  aboutSections,
+  aboutStats,
+  socialGoals,
+} from '../../shared/redva.data';
 
 @Component({
   selector: 'app-quienes-somos',
@@ -12,5 +17,6 @@ export class QuienesSomos {
   protected readonly sections = aboutSections;
   protected readonly stats = aboutStats;
   protected readonly goals = socialGoals;
-  protected readonly heroImage = 'assets/redva/hero-community.png';
+  protected readonly heroImage =
+    'assets/redva/constitucionredvalandasamblea.jpg';
 }

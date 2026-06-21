@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import {
   federationFragment,
   federations,
-  latestFederationNews,
+  newsArticles,
   type Federation,
 } from '../../shared/redva.data';
 
@@ -15,8 +15,9 @@ import {
 })
 export class Federaciones {
   protected readonly federations = federations;
-  protected readonly latestNews = latestFederationNews;
-  protected readonly heroImage = 'assets/redva/hero-community.png';
+  protected readonly latestNews = newsArticles;
+  protected readonly heroImage =
+    'assets/redva/constitucionredvalandasamblea.jpg';
   protected readonly ceavLogo = 'assets/redva/logo-ceav.png';
 
   protected websiteUrl(website: string): string {

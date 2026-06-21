@@ -58,7 +58,8 @@ export interface DecaloguePoint {
 
 const asset = (fileName: string): string => `assets/redva/${fileName}`;
 
-export const federationFragment = (federation: Federation): string => federation.id;
+export const federationFragment = (federation: Federation): string =>
+  federation.id;
 
 const goalIcons = {
   institution: {
@@ -360,155 +361,53 @@ export const federations: readonly Federation[] = [
 export const newsArticles: readonly NewsArticle[] = [
   {
     slug: 'ilp-vivienda-digna-movilizacion-continua',
-    title: 'ILP por una Vivienda Digna: La movilizacion continua',
+    title: 'La vivienda toma las calles de Sevilla',
     excerpt:
-      'La Confederacion Red Vecinal Andaluza redobla sus esfuerzos para alcanzar las firmas necesarias y garantizar el derecho a un techo digno.',
+      'Miles de personas reclaman un giro en las políticas públicas ante la escalada de precios y la falta de vivienda asequible.',
     body: [
-      'La campana por una vivienda digna avanza en toda Andalucia con asambleas abiertas, mesas informativas y coordinacion entre federaciones provinciales.',
-      'RedVA reclama una ley nacida del pueblo, orientada a proteger el derecho constitucional a un hogar y a frenar la especulacion inmobiliaria.',
+      'La manifestación por el derecho a la vivienda reunió a colectivos vecinales, plataformas sociales y ciudadanía de toda Sevilla, que exigieron medidas urgentes frente a la especulación y el aumento insostenible de los alquileres.',
+      'Las organizaciones participantes reclamaron políticas públicas valientes que garanticen el acceso a un hogar digno, frenen la presión de los fondos buitre y prioricen el interés social por encima del beneficio privado.',
     ],
     category: 'Iniciativa Legislativa Popular',
-    date: '15 Mayo 2024',
-    image: asset('news-featured-protest.png'),
+    date: '19 Junio 2026',
+    image: asset('mani_vivienda.jpeg'),
+    featured: false,
+  },
+  {
+    slug: 'ilp-derecho-vivienda-presentacion-andalucia',
+    title:
+      'Sindicatos, FACUA y Red Vecinal Andaluza impulsan una ILP para garantizar el derecho a la vivienda',
+    excerpt:
+      'Las organizaciones presentan una Iniciativa Legislativa Popular que busca frenar la especulación y asegurar el acceso a un hogar digno en Andalucía.',
+    body: [
+      'Diversas organizaciones sociales y sindicales, entre ellas FACUA Andalucía, CCOO, UGT y la Red Vecinal Andaluza, han unido fuerzas para registrar una Iniciativa Legislativa Popular destinada a reforzar el derecho a la vivienda y combatir la escalada de precios que afecta a miles de familias.',
+      'La propuesta plantea medidas estructurales para limitar la especulación inmobiliaria, ampliar el parque público de vivienda y garantizar mecanismos de protección frente a desahucios y situaciones de vulnerabilidad residencial.',
+      'Durante la presentación, las entidades impulsoras subrayaron la necesidad de que el Parlamento de Andalucía asuma su responsabilidad ante una emergencia habitacional que se agrava cada año. También destacaron que la ILP nace del consenso social y del trabajo conjunto de colectivos que llevan años denunciando la falta de políticas eficaces.',
+      'La campaña de recogida de firmas se desarrollará en toda Andalucía con el apoyo de asociaciones vecinales, plataformas ciudadanas y movimientos sociales, que consideran esta iniciativa un paso decisivo para asegurar un modelo de vivienda justo y sostenible.',
+    ],
+    category: 'Iniciativa Legislativa Popular',
+    province: 'Andalucía',
+    date: '26 Marzo 2026',
+    image: asset('ilp_registro.jpg'),
     featured: true,
   },
   {
-    slug: 'asamblea-general-nuevas-estrategias',
+    slug: 'nace-red-vecinal-andaluza',
     title:
-      'Asamblea General: Nuevas estrategias para el fortalecimiento del movimiento vecinal andaluz',
+      'Nace la Red Vecinal Andaluza: una nueva etapa para el movimiento ciudadano',
     excerpt:
-      'Representantes de las ocho provincias se reunen para coordinar acciones conjuntas frente a los nuevos retos urbanos y sociales.',
+      'Las federaciones vecinales de las ocho provincias impulsan una estructura común para fortalecer la participación y la defensa de los derechos urbanos en Andalucía.',
     body: [
-      'La Confederacion RED VECINAL ANDALUZA (RedVA) ha celebrado su ultima Asamblea General Ordinaria en un clima de colaboracion sin precedentes, marcando una hoja de ruta clara para los proximos dos anos.',
-      'En el encuentro han participado delegaciones de las ocho provincias andaluzas: Almeria, Cadiz, Cordoba, Granada, Huelva, Jaen, Malaga y Sevilla. El objetivo central ha sido debatir y consensuar nuevas estrategias que permitan al movimiento vecinal anticiparse a los retos urbanos del siglo XXI.',
-      'Uno de los pilares fundamentales discutidos fue la Iniciativa Legislativa Popular por la Vivienda. Se ha acordado intensificar la campana de recogida de firmas y la interlocucion directa con el Parlamento de Andalucia.',
-      'Ademas de la vivienda, se abordaron la precariedad en los suministros basicos y la brecha digital que afecta especialmente a la poblacion mayor de nuestras confederaciones.',
+      'La Confederación Estatal de Asociaciones Vecinales (CEAV) ha anunciado el inicio de una nueva etapa organizativa con la puesta en marcha de la Red Vecinal Andaluza (RedVA), un espacio de coordinación estable entre las federaciones provinciales de Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga y Sevilla.',
+      'El proyecto nace con el objetivo de reforzar la interlocución con las administraciones, compartir estrategias frente a los retos urbanos y sociales, y consolidar una voz común que represente al movimiento vecinal andaluz en el ámbito autonómico.',
+      'Durante la presentación se destacó la importancia de articular una estructura moderna, participativa y capaz de responder a desafíos como la vivienda, la movilidad, la brecha digital o la protección del espacio público. RedVA se plantea como una herramienta para unir esfuerzos y mejorar la capacidad de incidencia en las políticas públicas.',
+      'La nueva red inicia su andadura con un calendario de trabajo conjunto y el compromiso de impulsar campañas, formación y proyectos que fortalezcan la participación ciudadana en todos los territorios de Andalucía.',
     ],
     category: 'Institucional',
-    province: 'Andalucia',
-    date: '12 Octubre 2023',
-    image: asset('news-asamblea.png'),
-    featured: false,
-  },
-  {
-    slug: 'red-vecinal-malaga-mejoras-transporte',
-    title:
-      'La Red Vecinal de Malaga exige mejoras en el transporte de los barrios perifericos',
-    excerpt:
-      'Denuncian la falta de frecuencias en las lineas que conectan los barrios perifericos con los centros de servicios basicos.',
-    body: [
-      'La federacion malaguena solicita un plan urgente de movilidad que garantice conexiones fiables para acudir a centros de salud, centros educativos y gestiones administrativas.',
-      'La propuesta incluye horarios ampliados, marquesinas accesibles y participacion vecinal en el seguimiento del servicio.',
-    ],
-    category: 'Malaga',
-    province: 'Malaga',
-    date: '08 Octubre 2023',
-    image: asset('news-speaker.png'),
-    featured: false,
-  },
-  {
-    slug: 'convenio-junta-digitalizacion-quejas',
-    title:
-      'Convenio con la Junta para la digitalizacion del canal de quejas ciudadanas',
-    excerpt:
-      'Un nuevo paso para reducir la brecha digital en las asociaciones y facilitar la tramitacion de quejas y propuestas ciudadanas.',
-    body: [
-      'RedVA y la administracion autonomica impulsan un marco de colaboracion para que las entidades vecinales puedan elevar incidencias con mayor trazabilidad.',
-      'El proyecto contempla formacion, acompanamiento tecnico y criterios de accesibilidad para personas mayores.',
-    ],
-    category: 'Servicios Publicos',
-    province: 'Sevilla',
-    date: '05 Octubre 2023',
-    image: asset('news-office.png'),
-    featured: false,
-  },
-  {
-    slug: 'cordoba-plan-iluminacion-sostenible',
-    title:
-      'RedVA Cordoba presenta el plan de iluminacion sostenible para el casco historico',
-    excerpt:
-      'Propuesta ciudadana para equilibrar la seguridad nocturna con el respeto al patrimonio y la eficiencia energetica.',
-    body: [
-      'La federacion cordobesa plantea una renovacion progresiva de luminarias que cuide el descanso vecinal y mejore la seguridad en calles historicas.',
-      'El documento propone auditorias por barrio, mediciones de consumo y participacion de residentes y comerciantes.',
-    ],
-    category: 'Cordoba',
-    province: 'Cordoba',
-    date: '30 Septiembre 2023',
-    image: asset('news-cordoba.png'),
-    featured: false,
-  },
-  {
-    slug: 'talleres-formacion-vecinal-sevilla',
-    title: 'Exito en los talleres de formacion vecinal en Sevilla',
-    excerpt:
-      'Mas de 200 personas participan en jornadas sobre participacion ciudadana y herramientas de control democratico local.',
-    body: [
-      'Las sesiones combinan tecnologia, presupuestos municipales y estrategias de mediacion comunitaria para reforzar la accion de barrio.',
-      'RedVA replicara el formato en otras provincias durante los proximos meses.',
-    ],
-    category: 'Sevilla',
-    province: 'Sevilla',
-    date: '25 Septiembre 2023',
-    image: asset('news-workshop.png'),
-    featured: false,
-  },
-  {
-    slug: 'almeria-pacto-accesibilidad-universal',
-    title:
-      'Almeria firma el pacto por la accesibilidad universal en los barrios',
-    excerpt:
-      'Un compromiso entre asociaciones vecinales y ayuntamiento para eliminar barreras arquitectonicas en las zonas mas transitadas.',
-    body: [
-      'El pacto recoge itinerarios peatonales seguros, mejoras de senalizacion y un calendario de ejecucion supervisado por las asociaciones.',
-      'La accesibilidad se aborda como una condicion basica para la autonomia y la igualdad de oportunidades.',
-    ],
-    category: 'Almeria',
-    province: 'Almeria',
-    date: '20 Septiembre 2023',
-    image: asset('news-signing.png'),
+    province: 'Andalucía',
+    date: '14 Marzo 2026',
+    image: asset('constitucionredvalandpatio.jpg'),
     featured: false,
   },
 ];
 
-export const latestFederationNews: readonly NewsArticle[] = [
-  {
-    slug: 'acciones-vecinales-barrios-historicos',
-    title: 'Acciones vecinales por la mejora de barrios historicos',
-    excerpt:
-      'Las federaciones se coordinan para solicitar planes de rehabilitacion integral en las zonas mas vulnerables de Andalucia.',
-    body: [
-      'Las asociaciones vecinales reclaman inversiones sostenidas y escucha activa en el diseno urbano.',
-    ],
-    category: 'Comunidad',
-    date: '12 Mayo 2024',
-    image: asset('news-meeting.png'),
-    featured: false,
-  },
-  {
-    slug: 'avances-ilp-vivienda-digna',
-    title: 'Avances significativos en la ILP por la Vivienda Digna',
-    excerpt:
-      'La comision promotora presenta nuevas firmas y refuerza el apoyo parlamentario para la proteccion del derecho a techo.',
-    body: [
-      'El movimiento vecinal intensifica la recogida de apoyos en mercados, plazas y centros civicos.',
-    ],
-    category: 'ILP Vivienda',
-    date: '11 Mayo 2024',
-    image: asset('ilp-hero.png'),
-    featured: false,
-  },
-  {
-    slug: 'encuentro-regional-federaciones-sevilla',
-    title: 'Encuentro regional de federaciones vecinales en Sevilla',
-    excerpt:
-      'Representantes de las ocho provincias se reunen para trazar la hoja de ruta estrategica para el proximo bienio.',
-    body: [
-      'El encuentro refuerza la cooperacion institucional y el trabajo coordinado entre territorios.',
-    ],
-    category: 'Institucional',
-    date: '10 Mayo 2024',
-    image: asset('sidebar-arches.png'),
-    featured: false,
-  },
-];

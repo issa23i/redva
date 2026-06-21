@@ -13,16 +13,24 @@ export class Listado implements OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly queryParamSubscription: Subscription;
 
-  protected readonly featuredArticle = newsArticles.find((article) => article.featured);
-  protected readonly articles = newsArticles.filter((article) => !article.featured);
+  protected readonly featuredArticle = newsArticles.find(
+    (article) => article.featured,
+  );
+  protected readonly articles = newsArticles.filter(
+    (article) => !article.featured,
+  );
   protected readonly pageSize = 6;
   protected currentPage = 1;
 
   constructor() {
-    this.queryParamSubscription = this.route.queryParamMap.subscribe((params) => {
-      const requestedPage = Number(params.get('page') ?? 1);
-      this.currentPage = this.clampPage(Number.isInteger(requestedPage) ? requestedPage : 1);
-    });
+    this.queryParamSubscription = this.route.queryParamMap.subscribe(
+      (params) => {
+        const requestedPage = Number(params.get('page') ?? 1);
+        this.currentPage = this.clampPage(
+          Number.isInteger(requestedPage) ? requestedPage : 1,
+        );
+      },
+    );
   }
 
   ngOnDestroy(): void {
