@@ -34,9 +34,57 @@
       <footer class="article-actions">
         <div>
           <span>Compartir:</span>
-          <button type="button">link</button>
-          <button type="button">mail</button>
-          <button type="button">print</button>
+          <a
+            class="share-button"
+            [href]="'https://www.facebook.com/sharer/sharer.php?u=' + encodedArticleShareUrl + '&quote=' + encodedArticleShareText"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en Facebook"
+            title="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1Z" /></svg>
+          </a>
+          <a
+            class="share-button"
+            [href]="'https://twitter.com/intent/tweet?url=' + encodedArticleShareUrl + '&text=' + encodedArticleTitle"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en X"
+            title="X"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4.7l4 5.3L17.4 4H20l-6.1 7 6.4 9h-4.7l-4.2-5.7L6.4 20H3.8l6.4-7.4L4 4Zm3.3 1.7 9.1 12.6h.7L8 5.7h-.7Z" /></svg>
+          </a>
+          <a
+            class="share-button"
+            [href]="'https://www.linkedin.com/feed/?shareActive=true&text=' + encodedArticleShareText + '%0A%0A' + encodedArticleShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en LinkedIn"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.7h3.2V20H5.1V8.7Zm1.6-5.3a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8ZM10.3 8.7h3v1.5h.1c.4-.8 1.5-1.8 3-1.8 3.2 0 3.8 2.1 3.8 4.8V20H17v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V20h-3.2V8.7Z" /></svg>
+          </a>
+          <a
+            class="share-button"
+            [href]="'https://api.whatsapp.com/send?text=' + encodedArticleTitle + '%20' + encodedArticleShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en WhatsApp"
+            title="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.3 8.3 0 0 0-7.1 12.6L4 20.5l4.5-1a8.2 8.2 0 0 0 3.5.8 8.4 8.4 0 0 0 0-16.8Zm0 14.9c-1.1 0-2.1-.3-3-.8l-.3-.2-2.1.5.5-2.1-.2-.3A6.5 6.5 0 1 1 12 18.4Zm3.7-4.8c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4l-.6-1.4c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5.5.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.3-.2-.5-.3Z" /></svg>
+          </a>
+          <a
+            class="share-button"
+            [href]="'mailto:?subject=' + encodedArticleTitle + '&body=' + encodedArticleShareUrl"
+            aria-label="Compartir por correo"
+            title="Correo"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6Zm2 2v.4l6 4.1 6-4.1V8H6Zm12 8v-5.2l-6 4.1-6-4.1V16h12Z" /></svg>
+          </a>
+          <button class="share-button" type="button" (click)="printArticle()" aria-label="Imprimir" title="Imprimir">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v5H7V3Zm0 13H5a2 2 0 0 1-2-2v-3c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v5H7v-5Zm2 0v3h6v-3H9Zm8-2h2v-3H5v3h2v-1h10v1Z" /></svg>
+          </button>
         </div>
       </footer>
     </article>

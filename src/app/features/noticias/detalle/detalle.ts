@@ -12,6 +12,7 @@ import { SeoService } from '../../../shared/seo.service';
   styleUrl: './detalle.scss',
 })
 export class Detalle implements OnDestroy {
+  private readonly publicBaseUrl = 'https://redvecinalandaluza.org';
   protected article: NewsArticle = newsArticles[0];
   protected relatedArticles: readonly NewsArticle[] = [];
   private readonly routeParamSubscription: Subscription;
@@ -34,6 +35,26 @@ export class Detalle implements OnDestroy {
 
   protected get firstRelatedArticle(): NewsArticle | undefined {
     return this.relatedArticles[0];
+  }
+
+  protected get articleShareUrl(): string {
+    return `${this.publicBaseUrl}/noticias/${this.article.slug}`;
+  }
+
+  protected get encodedArticleShareUrl(): string {
+    return encodeURIComponent(this.articleShareUrl);
+  }
+
+  protected get encodedArticleTitle(): string {
+    return encodeURIComponent(this.article.title);
+  }
+
+  protected get encodedArticleShareText(): string {
+    return encodeURIComponent(`${this.article.title}\n\n${this.article.excerpt}`);
+  }
+
+  protected printArticle(): void {
+    window.print();
   }
 
   protected openArticle(event: Event, article: NewsArticle): void {

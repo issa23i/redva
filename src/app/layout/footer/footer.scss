@@ -66,10 +66,31 @@
 }
 
 .social-links a {
+  align-items: center;
   border: 1px solid rgba(244, 240, 239, 0.45);
   border-radius: 999px;
-  font-size: 0.72rem;
-  padding: 0.25rem 0.55rem;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+  width: 34px;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  background: var(--color-inverse-on-surface);
+  border-color: var(--color-inverse-on-surface);
+  color: var(--color-inverse-surface);
+}
+
+.social-links svg {
+  fill: currentColor;
+  height: 17px;
+  width: 17px;
 }
 
 .site-footer__legal {
