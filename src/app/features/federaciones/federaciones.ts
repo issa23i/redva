@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
+  federationFragment,
   federations,
   latestFederationNews,
   type Federation,
@@ -23,40 +24,6 @@ export class Federaciones {
   }
 
   protected federationFragment(federation: Federation): string {
-    const name = federation.name.toLowerCase();
-
-    if (name.includes('al-zahara')) {
-      return 'cordoba';
-    }
-
-    if (name.includes('caveca')) {
-      return 'cadiz';
-    }
-
-    if (name.includes('cava')) {
-      return 'jaen';
-    }
-
-    if (name.includes('solidaridad')) {
-      return 'malaga';
-    }
-
-    if (name.includes('sevilla')) {
-      return 'sevilla';
-    }
-
-    if (name.includes('argar')) {
-      return 'almeria';
-    }
-
-    if (name.includes('flavi')) {
-      return 'lalinea';
-    }
-
-    return federation.province
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-zA-Z0-9]+/g, '')
-      .toLowerCase();
+    return federationFragment(federation);
   }
 }

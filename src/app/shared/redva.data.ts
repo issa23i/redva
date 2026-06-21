@@ -11,6 +11,7 @@ export interface NewsArticle {
 }
 
 export interface Federation {
+  readonly id: string;
   readonly province: string;
   readonly name: string;
   readonly description: string;
@@ -56,6 +57,8 @@ export interface DecaloguePoint {
 }
 
 const asset = (fileName: string): string => `assets/redva/${fileName}`;
+
+export const federationFragment = (federation: Federation): string => federation.id;
 
 const goalIcons = {
   institution: {
@@ -297,9 +300,11 @@ export const decaloguePoints: readonly DecaloguePoint[] = [
 
 export const federations: readonly Federation[] = [
   {
+    id: 'cordoba',
     province: 'Córdoba',
     name: 'Federación de Asociaciones Vecinales de Córdoba Al-Zahara',
-    description: 'Federación de asociaciones vecinales de Córdoba integrada en RedVA.',
+    description:
+      'Federación de asociaciones vecinales de Córdoba integrada en RedVA.',
     address: 'Ronda del Marrubial, Levante, 14007 Córdoba',
     phone: '954 76 44 95 - 607 731 371',
     email: 'alzahara@alzahara.com',
@@ -307,36 +312,44 @@ export const federations: readonly Federation[] = [
     ceavMember: true,
   },
   {
+    id: 'jaen',
     province: 'Jaén',
     name: 'CAVA-Jaén',
     description: 'Unión Provincial de Federaciones Vecinales CAVA-Jaén.',
     ceavMember: true,
   },
   {
+    id: 'malaga',
     province: 'Málaga',
     name: 'Federación de Asociaciones Vecinales de Málaga Solidaridad',
-    description: 'Federación de asociaciones vecinales de Málaga integrada en RedVA.',
+    description:
+      'Federación de asociaciones vecinales de Málaga integrada en RedVA.',
     ceavMember: true,
   },
   {
+    id: 'sevilla',
     province: 'Sevilla',
     name: 'Red Vecinal Sevilla',
     description: 'Confederacion Provincial Red Vecinal de Sevilla.',
     ceavMember: true,
   },
   {
+    id: 'cadiz',
     province: 'Cádiz',
     name: 'CAVECA',
-    description: 'Confederación de Federaciones Vecinales de la Provincia de Cádiz.',
+    description:
+      'Confederación de Federaciones Vecinales de la Provincia de Cádiz.',
     ceavMember: true,
   },
   {
+    id: 'almeria',
     province: 'Almería',
     name: 'ARGAR',
     description: 'Federación de Asociaciones Vecinales de Almería ARGAR.',
     ceavMember: true,
   },
   {
+    id: 'lalinea',
     province: 'La Línea',
     name: 'FLAVI',
     description: 'Federación de Asociaciones Vecinales de La Línea, FLAVI.',
@@ -361,7 +374,8 @@ export const newsArticles: readonly NewsArticle[] = [
   },
   {
     slug: 'asamblea-general-nuevas-estrategias',
-    title: 'Asamblea General: Nuevas estrategias para el fortalecimiento del movimiento vecinal andaluz',
+    title:
+      'Asamblea General: Nuevas estrategias para el fortalecimiento del movimiento vecinal andaluz',
     excerpt:
       'Representantes de las ocho provincias se reunen para coordinar acciones conjuntas frente a los nuevos retos urbanos y sociales.',
     body: [
@@ -378,7 +392,8 @@ export const newsArticles: readonly NewsArticle[] = [
   },
   {
     slug: 'red-vecinal-malaga-mejoras-transporte',
-    title: 'La Red Vecinal de Malaga exige mejoras en el transporte de los barrios perifericos',
+    title:
+      'La Red Vecinal de Malaga exige mejoras en el transporte de los barrios perifericos',
     excerpt:
       'Denuncian la falta de frecuencias en las lineas que conectan los barrios perifericos con los centros de servicios basicos.',
     body: [
@@ -393,7 +408,8 @@ export const newsArticles: readonly NewsArticle[] = [
   },
   {
     slug: 'convenio-junta-digitalizacion-quejas',
-    title: 'Convenio con la Junta para la digitalizacion del canal de quejas ciudadanas',
+    title:
+      'Convenio con la Junta para la digitalizacion del canal de quejas ciudadanas',
     excerpt:
       'Un nuevo paso para reducir la brecha digital en las asociaciones y facilitar la tramitacion de quejas y propuestas ciudadanas.',
     body: [
@@ -408,7 +424,8 @@ export const newsArticles: readonly NewsArticle[] = [
   },
   {
     slug: 'cordoba-plan-iluminacion-sostenible',
-    title: 'RedVA Cordoba presenta el plan de iluminacion sostenible para el casco historico',
+    title:
+      'RedVA Cordoba presenta el plan de iluminacion sostenible para el casco historico',
     excerpt:
       'Propuesta ciudadana para equilibrar la seguridad nocturna con el respeto al patrimonio y la eficiencia energetica.',
     body: [
@@ -438,7 +455,8 @@ export const newsArticles: readonly NewsArticle[] = [
   },
   {
     slug: 'almeria-pacto-accesibilidad-universal',
-    title: 'Almeria firma el pacto por la accesibilidad universal en los barrios',
+    title:
+      'Almeria firma el pacto por la accesibilidad universal en los barrios',
     excerpt:
       'Un compromiso entre asociaciones vecinales y ayuntamiento para eliminar barreras arquitectonicas en las zonas mas transitadas.',
     body: [
@@ -459,7 +477,9 @@ export const latestFederationNews: readonly NewsArticle[] = [
     title: 'Acciones vecinales por la mejora de barrios historicos',
     excerpt:
       'Las federaciones se coordinan para solicitar planes de rehabilitacion integral en las zonas mas vulnerables de Andalucia.',
-    body: ['Las asociaciones vecinales reclaman inversiones sostenidas y escucha activa en el diseno urbano.'],
+    body: [
+      'Las asociaciones vecinales reclaman inversiones sostenidas y escucha activa en el diseno urbano.',
+    ],
     category: 'Comunidad',
     date: '12 Mayo 2024',
     image: asset('news-meeting.png'),
@@ -470,7 +490,9 @@ export const latestFederationNews: readonly NewsArticle[] = [
     title: 'Avances significativos en la ILP por la Vivienda Digna',
     excerpt:
       'La comision promotora presenta nuevas firmas y refuerza el apoyo parlamentario para la proteccion del derecho a techo.',
-    body: ['El movimiento vecinal intensifica la recogida de apoyos en mercados, plazas y centros civicos.'],
+    body: [
+      'El movimiento vecinal intensifica la recogida de apoyos en mercados, plazas y centros civicos.',
+    ],
     category: 'ILP Vivienda',
     date: '11 Mayo 2024',
     image: asset('ilp-hero.png'),
@@ -481,7 +503,9 @@ export const latestFederationNews: readonly NewsArticle[] = [
     title: 'Encuentro regional de federaciones vecinales en Sevilla',
     excerpt:
       'Representantes de las ocho provincias se reunen para trazar la hoja de ruta estrategica para el proximo bienio.',
-    body: ['El encuentro refuerza la cooperacion institucional y el trabajo coordinado entre territorios.'],
+    body: [
+      'El encuentro refuerza la cooperacion institucional y el trabajo coordinado entre territorios.',
+    ],
     category: 'Institucional',
     date: '10 Mayo 2024',
     image: asset('sidebar-arches.png'),

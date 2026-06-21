@@ -1,6 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { federationFragment, federations, navLinks, type Federation } from '../../shared/redva.data';
+import {
+  federationFragment,
+  federations,
+  navLinks,
+  type Federation,
+} from '../../shared/redva.data';
 
 @Component({
   selector: 'app-header',
