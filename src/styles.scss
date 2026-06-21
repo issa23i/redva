@@ -746,6 +746,12 @@ app-root {
   color: white;
 }
 
+.pagination .is-disabled {
+  color: var(--color-on-surface-variant);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 .article-page {
   padding-top: 3rem;
 }

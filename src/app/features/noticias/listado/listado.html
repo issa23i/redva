@@ -18,7 +18,7 @@
     <hr class="soft-divider" />
 
     <div class="news-grid">
-      @for (article of articles; track article.slug) {
+      @for (article of paginatedArticles; track article.slug) {
         <article class="news-card">
           <img [src]="article.image" [alt]="article.title" />
           <div class="news-card__body">
@@ -34,13 +34,36 @@
       }
     </div>
 
-    <nav class="pagination" aria-label="Paginacion">
-      <a aria-label="Pagina anterior">‹</a>
-      <a class="is-current">1</a>
-      <a>2</a>
-      <a>3</a>
-      <span>...</span>
-      <a aria-label="Pagina siguiente">›</a>
-    </nav>
+    @if (totalPages > 1) {
+      <nav class="pagination" aria-label="Paginacion">
+        <a
+          [routerLink]="[]"
+          [queryParams]="{ page: previousPage }"
+          queryParamsHandling="merge"
+          aria-label="Pagina anterior"
+          [attr.aria-disabled]="isFirstPage ? 'true' : null"
+          [class.is-disabled]="isFirstPage"
+        >‹</a>
+
+        @for (page of pages; track page) {
+          <a
+            [routerLink]="[]"
+            [queryParams]="{ page: page }"
+            queryParamsHandling="merge"
+            [attr.aria-current]="page === currentPage ? 'page' : null"
+            [class.is-current]="page === currentPage"
+          >{{ page }}</a>
+        }
+
+        <a
+          [routerLink]="[]"
+          [queryParams]="{ page: nextPage }"
+          queryParamsHandling="merge"
+          aria-label="Pagina siguiente"
+          [attr.aria-disabled]="isLastPage ? 'true' : null"
+          [class.is-disabled]="isLastPage"
+        >›</a>
+      </nav>
+    }
   </div>
 </main>
