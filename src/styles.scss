@@ -374,6 +374,7 @@ app-root {
   border-radius: 2px;
   min-height: 230px;
   padding: 1.5rem;
+  scroll-margin-top: 96px;
 }
 
 .federation-card h3 {
@@ -396,6 +397,12 @@ app-root {
   margin-top: 0.65rem;
 }
 
+.federation-card .meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .ceav-callout {
   align-items: center;
   background: #eef7fb;
@@ -405,6 +412,7 @@ app-root {
   gap: 1.5rem;
   margin-top: 3rem;
   padding: 1.5rem;
+  scroll-margin-top: 96px;
 }
 
 .ceav-callout img {

@@ -1,6 +1,6 @@
 <header class="site-header">
   <nav class="site-header__nav app-container" aria-label="Navegacion principal">
-    <a class="brand" routerLink="/" (click)="closeMenu()" aria-label="RedVA inicio">
+    <a class="brand" routerLink="/" (click)="closeMenu($event)" aria-label="RedVA inicio">
       <img [src]="logoPath" alt="RedVA" />
       <span>RedVA</span>
     </a>
@@ -20,18 +20,28 @@
     <div id="primary-menu" class="site-header__links" [class.is-open]="menuOpen">
       @for (item of navLinks; track item.path) {
         @if (item.path === '/federaciones') {
-          <div class="nav-dropdown">
+          <div
+            class="nav-dropdown"
+            [class.is-open]="dropdownOpen"
+            [class.is-closed]="dropdownClosed"
+            (mouseenter)="openDropdown()"
+            (mouseleave)="resetDropdown()"
+          >
             <a
               [routerLink]="item.path"
               routerLinkActive="is-active"
               [routerLinkActiveOptions]="{ exact: true }"
-              (click)="closeMenu()"
+              (click)="toggleDropdown($event)"
             >
               {{ item.label }}
             </a>
             <div class="nav-dropdown__panel">
               @for (federation of federations; track federation.province) {
-                <a routerLink="/federaciones" fragment="directorio" (click)="closeMenu()">
+                <a
+                  routerLink="/federaciones"
+                  [fragment]="federationFragment(federation)"
+                  (click)="closeMenu($event)"
+                >
                   {{ federation.province }}
                 </a>
               }
@@ -42,13 +52,13 @@
             [routerLink]="item.path"
             routerLinkActive="is-active"
             [routerLinkActiveOptions]="{ exact: item.path !== '/noticias' }"
-            (click)="closeMenu()"
+            (click)="closeMenu($event)"
           >
             {{ item.label }}
           </a>
         }
       }
-      <a class="button button--primary button--small" routerLink="/ilp-vivienda" (click)="closeMenu()">Participar</a>
+      <a class="button button--primary button--small" routerLink="/ilp-vivienda" (click)="closeMenu($event)">Participar</a>
     </div>
   </nav>
 </header>

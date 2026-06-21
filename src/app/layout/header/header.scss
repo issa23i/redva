@@ -85,6 +85,10 @@
   display: grid;
 }
 
+.nav-dropdown.is-closed .nav-dropdown__panel {
+  display: none;
+}
+
 .nav-dropdown__panel a {
   padding: 0.55rem 0.65rem;
 }

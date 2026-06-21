@@ -25,7 +25,7 @@
       </div>
       <div class="federation-grid">
         @for (federation of federations; track federation.province) {
-          <article class="federation-card">
+          <article class="federation-card" [id]="federationFragment(federation)">
             <h3>{{ federation.province }}</h3>
             <h4>{{ federation.name }}</h4>
             <p>{{ federation.description }}</p>
@@ -39,7 +39,11 @@
               <p class="meta">{{ federation.email }}</p>
             }
             @if (federation.website) {
-              <p class="meta">{{ federation.website }}</p>
+              <p class="meta">
+                <a [href]="websiteUrl(federation.website)" target="_blank" rel="noopener noreferrer">
+                  {{ federation.website }}
+                </a>
+              </p>
             }
             <span>Miembro CEAV</span>
           </article>

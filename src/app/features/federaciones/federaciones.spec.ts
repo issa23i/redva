@@ -22,4 +22,21 @@ describe('Federaciones', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render federation cards with stable section ids', () => {
+    const laLineaCard: HTMLElement | null = fixture.nativeElement.querySelector('#lalinea');
+
+    expect(laLineaCard).not.toBeNull();
+  });
+
+  it('should render federation websites as external links', () => {
+    const websiteLink: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.federation-card .meta a[href="https://www.al-zahara.com"]',
+    );
+
+    expect(websiteLink).not.toBeNull();
+    expect(websiteLink?.textContent?.trim()).toBe('www.al-zahara.com');
+    expect(websiteLink?.target).toBe('_blank');
+    expect(websiteLink?.rel).toContain('noopener');
+  });
 });
