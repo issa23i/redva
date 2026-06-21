@@ -403,22 +403,51 @@ app-root {
   text-underline-offset: 0.18em;
 }
 
+.app-ceav-callout,
+app-ceav-callout {
+  display: block;
+}
+
 .ceav-callout {
-  align-items: center;
   background: #eef7fb;
   border: 1px solid #cde5ee;
   border-radius: 6px;
+  margin-top: 3rem;
+  scroll-margin-top: 96px;
+}
+
+.ceav-callout__link {
+  align-items: center;
+  color: inherit;
   display: flex;
   gap: 1.5rem;
-  margin-top: 3rem;
   padding: 1.5rem;
-  scroll-margin-top: 96px;
+  text-decoration: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.ceav-callout:hover,
+.ceav-callout:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-interactive);
+}
+
+.ceav-callout__link:focus-visible {
+  outline: 3px solid rgba(0, 153, 204, 0.35);
+  outline-offset: 4px;
 }
 
 .ceav-callout img {
   height: 72px;
   object-fit: contain;
   width: 72px;
+}
+
+.about-layout > app-ceav-callout {
+  grid-column: 1 / -1;
 }
 
 .about-layout {
@@ -1002,7 +1031,7 @@ app-root {
     grid-column: auto;
   }
 
-  .ceav-callout {
+  .ceav-callout__link {
     align-items: start;
     flex-direction: column;
   }

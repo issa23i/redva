@@ -6,10 +6,11 @@ import {
   newsArticles,
   type Federation,
 } from '../../shared/redva.data';
+import { CeavCallout } from '../../shared/ceav-callout/ceav-callout';
 
 @Component({
   selector: 'app-federaciones',
-  imports: [RouterLink],
+  imports: [RouterLink, CeavCallout],
   templateUrl: './federaciones.html',
   styleUrl: './federaciones.scss',
 })

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CeavCallout } from '../../shared/ceav-callout/ceav-callout';
 import { aboutIntro, newsArticles, socialGoals } from '../../shared/redva.data';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, CeavCallout],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
