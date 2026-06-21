@@ -1,0 +1,119 @@
+.legal-page {
+  background: var(--color-surface);
+}
+
+.legal-hero {
+  max-width: 900px;
+}
+
+.legal-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  line-height: 1.05;
+}
+
+.legal-hero p {
+  font-size: 1.08rem;
+  margin-top: 1rem;
+  max-width: 760px;
+}
+
+.legal-updated {
+  color: var(--color-secondary);
+  font-size: 0.9rem !important;
+  font-weight: 800;
+}
+
+.legal-layout {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) 340px;
+}
+
+.legal-content {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.legal-content section + section {
+  border-top: 1px solid var(--color-outline-variant);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+.legal-content h2,
+.legal-note h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.legal-content p + p {
+  margin-top: 1rem;
+}
+
+.legal-content a {
+  color: var(--color-secondary);
+  font-weight: 800;
+  text-underline-offset: 0.18em;
+}
+
+.legal-data {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.legal-data div {
+  border-bottom: 1px solid var(--color-outline-variant);
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 170px minmax(0, 1fr);
+  padding-bottom: 0.75rem;
+}
+
+.legal-data dt {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.legal-data dd {
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.legal-note {
+  background: #eef7fb;
+  border: 1px solid #cde5ee;
+  border-radius: 8px;
+  padding: 1.4rem;
+  position: sticky;
+  top: 96px;
+}
+
+.legal-note ul {
+  display: grid;
+  gap: 0.85rem;
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 980px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-note {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .legal-data div {
+    grid-template-columns: 1fr;
+  }
+}

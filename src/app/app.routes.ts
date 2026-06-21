@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AvisoLegal } from './features/aviso-legal/aviso-legal';
 import { Decalogo } from './features/decalogo/decalogo';
 import { Federaciones } from './features/federaciones/federaciones';
 import { Home } from './features/home/home';
@@ -89,6 +90,19 @@ export const routes: Routes = [
         description:
           'Informacion sobre privacidad, proteccion de datos y uso de almacenamiento local en la web de Red Vecinal Andaluza.',
         keywords: ['privacidad RedVA', 'proteccion de datos', 'cookies RedVA'],
+      },
+    },
+  },
+  {
+    path: 'aviso-legal',
+    component: AvisoLegal,
+    title: 'Aviso legal - RedVA',
+    data: {
+      seo: {
+        title: 'Aviso legal',
+        description:
+          'Aviso legal e informacion del titular del sitio web de Red Vecinal Andaluza.',
+        keywords: ['aviso legal RedVA', 'Red Vecinal Andaluza', 'LSSI'],
       },
     },
   },
