@@ -3,11 +3,18 @@ export interface NewsArticle {
   readonly title: string;
   readonly excerpt: string;
   readonly body: readonly string[];
+  readonly quote?: string;
+  readonly sections?: readonly NewsArticleSection[];
   readonly category: string;
   readonly province?: string;
   readonly date: string;
   readonly image: string;
   readonly featured: boolean;
+}
+
+export interface NewsArticleSection {
+  readonly title: string;
+  readonly body: readonly string[];
 }
 
 export interface Federation {
@@ -360,6 +367,46 @@ export const federations: readonly Federation[] = [
 
 export const newsArticles: readonly NewsArticle[] = [
   {
+    slug: 'informe-anual-2025-defensor-usuario-emasesa',
+    title:
+      'El Informe Anual 2025 del Defensor del Usuario de EMASESA subraya el valor de la escucha activa',
+    excerpt:
+      'El documento resume la actividad de la Defensoria del Usuario y detalla como la escucha activa, la mediacion y la transparencia permiten transformar las necesidades ciudadanas en mejoras concretas.',
+    body: [
+      'La Red Vecinal Andaluza quiere hacer llegar el Informe Anual 2025 del Defensor del Usuario de EMASESA, un documento que recoge de forma sintetica el trabajo desarrollado durante este periodo y que situa en el centro a las personas usuarias, sus necesidades, sus expectativas y su relacion cotidiana con los servicios publicos.',
+      'El informe presenta la Defensoria del Usuario como un servicio gratuito de escucha, interlocucion y mediacion a disposicion de la comunidad usuaria de EMASESA, asi como de asociaciones, colectivos, personas fisicas y juridicas y grupos de interes del area metropolitana. Su funcion no se limita a recibir consultas: tambien atiende sugerencias, quejas y reclamaciones en segunda instancia, impulsa actuaciones de oficio y formula recomendaciones dirigidas a las distintas areas funcionales de la empresa.',
+      'Mas alla de los datos estadisticos, el documento pone en valor la escucha activa como una herramienta para acercar la empresa publica a la ciudadania. La Defensoria actua como un puente que facilita una relacion mas fluida, clara y constructiva, identificando demandas reales y trasladandolas a los procesos internos para convertirlas en respuestas utiles.',
+      'Durante 2025 se recibieron 420 notificaciones, un 9,1% mas que en 2024. Las cuestiones relacionadas con facturacion y consumo concentraron una parte destacada de la actividad, seguidas por materias de contratacion y atencion al usuario, abastecimiento y saneamiento, ademas de asuntos tecnicos, sociales y de sostenibilidad.',
+      'El informe tambien subraya la importancia de los encuentros con entidades y asociaciones, especialmente cuando permiten detectar necesidades de personas vulnerables, mayores, personas con discapacidad o poblacion migrante. Ese contacto directo ayuda a actualizar la mirada de la empresa y a mantener una respuesta mas ajustada a la realidad social de cada momento.',
+      'Otro de los ejes destacados es el trabajo de los Circulos de Calidad, espacios colaborativos y transversales orientados a la mejora continua. En 2025 se celebraron 22 sesiones y se abordaron 50 asuntos, con el objetivo de perfilar propuestas creativas y consensuadas que mejoren la atencion y refuercen el compromiso con las personas usuarias.',
+      'La transparencia aparece igualmente como una linea de trabajo esencial. El documento recoge la actualizacion y difusion del Portal de Transparencia, concebido como una herramienta para rendir cuentas, ofrecer informacion clara y accesible, y fortalecer la confianza entre EMASESA y la ciudadania.',
+      'El resultado es el reflejo de una empresa publica cada vez mas cercana, atenta a la sociedad y comprometida con seguir avanzando en esa linea, adecuando su trabajo y su respuesta a lo que la ciudadania espera y necesita.',
+    ],
+    quote:
+      'El contacto directo y la escucha activa de las necesidades ciudadanas guian el trabajo diario y permiten transformar las demandas en mejoras concretas.',
+    sections: [
+      {
+        title: 'Servicio, transparencia y mejora continua',
+        body: [
+          'El informe describe la Defensoria del Usuario como un servicio gratuito dirigido a la comunidad usuaria de EMASESA, asociaciones, colectivos y grupos de interes del area metropolitana. Entre sus funciones figuran la atencion de consultas y sugerencias, la tramitacion en segunda instancia de quejas y reclamaciones, la promocion de la transparencia y la formulacion de recomendaciones internas.',
+          'Durante 2025 se recibieron 420 notificaciones, un 9,1% mas que en 2024. Las materias mas destacadas estuvieron relacionadas con facturacion y consumo, contratacion y atencion al usuario, abastecimiento y saneamiento, ademas de asuntos tecnicos, sociales y de sostenibilidad.',
+        ],
+      },
+      {
+        title: 'Dialogo con entidades y asociaciones',
+        body: [
+          'La Defensoria destaca los encuentros con entidades y asociaciones, con especial atencion a personas vulnerables, mayores, personas con discapacidad y poblacion migrante. Estas propuestas y necesidades emergentes se trasladan a los procesos internos para orientar nuevas iniciativas de mejora.',
+          'El informe tambien recoge el trabajo de los Circulos de Calidad, espacios colaborativos y transversales donde se han celebrado 22 sesiones y tratado 50 asuntos para impulsar respuestas consensuadas y mejorar la atencion a la comunidad usuaria.',
+        ],
+      },
+    ],
+    category: 'Servicios publicos',
+    province: 'Sevilla',
+    date: '23 Junio 2026',
+    image: asset('emasesa.jpg'),
+    featured: false,
+  },
+  {
     slug: 'ilp-vivienda-digna-movilizacion-continua',
     title: 'La vivienda toma las calles de Sevilla',
     excerpt:
@@ -410,4 +457,3 @@ export const newsArticles: readonly NewsArticle[] = [
     featured: false,
   },
 ];
-
