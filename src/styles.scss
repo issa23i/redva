@@ -658,6 +658,89 @@ app-ceav-callout {
   margin-right: 0.5rem;
 }
 
+.ilp-detail {
+  display: grid;
+  gap: 2rem;
+}
+
+.ilp-detail .section-heading {
+  align-items: start;
+}
+
+.ilp-detail .section-heading p {
+  max-width: 440px;
+}
+
+.ilp-detail__grid,
+.ilp-measures__grid,
+.ilp-stats {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ilp-detail__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ilp-text-block,
+.ilp-measures article,
+.ilp-stats article {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.ilp-text-block h3,
+.ilp-measures h3 {
+  color: var(--color-secondary);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.ilp-text-block p + p {
+  margin-top: 1rem;
+}
+
+.ilp-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ilp-stats article {
+  background: var(--color-primary);
+}
+
+.ilp-stats strong,
+.ilp-stats span {
+  display: block;
+}
+
+.ilp-stats strong {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  line-height: 1;
+}
+
+.ilp-stats span {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+  margin-top: 0.7rem;
+}
+
+.ilp-measures__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ilp-measures article {
+  min-height: 230px;
+}
+
+.ilp-measures p {
+  margin-top: 0.7rem;
+}
+
 .ilp-info-grid {
   display: grid;
   gap: 1.5rem;
@@ -1051,7 +1134,10 @@ app-ceav-callout {
 @media (max-width: 980px) {
   .goal-grid,
   .news-grid,
-  .federation-grid {
+  .federation-grid,
+  .ilp-detail__grid,
+  .ilp-measures__grid,
+  .ilp-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1099,6 +1185,9 @@ app-ceav-callout {
   .goal-grid,
   .news-grid,
   .federation-grid,
+  .ilp-detail__grid,
+  .ilp-measures__grid,
+  .ilp-stats,
   .ilp-info-grid,
   .info-card--image {
     grid-template-columns: 1fr;
