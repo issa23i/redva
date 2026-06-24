@@ -1,1 +1,52 @@
-<p>decalogo works!</p>
+<main>
+  <section class="hero hero--compact">
+    <img class="hero__image" [src]="heroImage" alt="Arquitectura andaluza como fondo institucional" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content app-container">
+      <span class="eyebrow">Marzo 2026</span>
+      <h1>Decálogo para la unidad del movimiento vecinal andaluz</h1>
+      <p>RED VECINAL ANDALUZA. Un documento abierto para construir coordinación, presencia institucional y fuerza vecinal.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container decalogue-intro">
+      <div>
+        <h2>Un camino común</h2>
+        <span class="section-rule"></span>
+        @for (paragraph of intro; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+      <aside>
+        <span>Sistema público</span>
+        <p>{{ publicSystem }}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Los diez ejes</h2>
+        <p>Prioridades de trabajo compartidas para el movimiento vecinal andaluz.</p>
+      </div>
+      <div class="decalogue-grid">
+        @for (point of points; track point.number) {
+          <article class="decalogue-card">
+            <span class="decalogue-card__number">{{ point.number }}</span>
+            <h3>{{ point.title }}</h3>
+            <p>{{ point.description }}</p>
+            @if (point.proposals?.length) {
+              <ul>
+                @for (proposal of point.proposals; track proposal) {
+                  <li>{{ proposal }}</li>
+                }
+              </ul>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>

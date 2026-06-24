@@ -1,1 +1,69 @@
-<p>listado works!</p>
+<main class="section section--soft news-page">
+  <div class="app-container">
+    @if (featuredArticle) {
+      <article class="featured-news">
+        <div class="featured-news__image">
+          <img [src]="featuredArticle.image" [alt]="featuredArticle.title" />
+          <span class="badge badge--blue">Destacado</span>
+        </div>
+        <div class="featured-news__body">
+          <span class="eyebrow">{{ featuredArticle.category }}</span>
+          <h1>{{ featuredArticle.title }}</h1>
+          <p>{{ featuredArticle.excerpt }}</p>
+          <a class="button button--primary" [routerLink]="['/noticias', featuredArticle.slug]">Leer mas</a>
+        </div>
+      </article>
+    }
+
+    <hr class="soft-divider" />
+
+    <div class="news-grid">
+      @for (article of paginatedArticles; track article.slug) {
+        <article class="news-card">
+          <img [src]="article.image" [alt]="article.title" />
+          <div class="news-card__body">
+            <div class="news-card__meta">
+              <span class="badge">{{ article.category }}</span>
+              <time>{{ article.date }}</time>
+            </div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.excerpt }}</p>
+            <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer articulo</a>
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (totalPages > 1) {
+      <nav class="pagination" aria-label="Paginacion">
+        <a
+          [routerLink]="[]"
+          [queryParams]="{ page: previousPage }"
+          queryParamsHandling="merge"
+          aria-label="Pagina anterior"
+          [attr.aria-disabled]="isFirstPage ? 'true' : null"
+          [class.is-disabled]="isFirstPage"
+        >‹</a>
+
+        @for (page of pages; track page) {
+          <a
+            [routerLink]="[]"
+            [queryParams]="{ page: page }"
+            queryParamsHandling="merge"
+            [attr.aria-current]="page === currentPage ? 'page' : null"
+            [class.is-current]="page === currentPage"
+          >{{ page }}</a>
+        }
+
+        <a
+          [routerLink]="[]"
+          [queryParams]="{ page: nextPage }"
+          queryParamsHandling="merge"
+          aria-label="Pagina siguiente"
+          [attr.aria-disabled]="isLastPage ? 'true' : null"
+          [class.is-disabled]="isLastPage"
+        >›</a>
+      </nav>
+    }
+  </div>
+</main>

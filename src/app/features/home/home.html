@@ -1,1 +1,76 @@
-<p>home works!</p>
+<main>
+  <section class="hero hero--home">
+    <img class="hero__image" [src]="heroImage" alt="Grupo vecinal andaluz en una avenida soleada" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content app-container">
+      <h1>Confederación RED VECINAL ANDALUZA (RedVA)</h1>
+      <p>Confederación de Asociaciones Vecinales de Andalucía. AAVV - Asociaciones de vecinos y vecinas.</p>
+      <div class="button-row">
+        <a class="button button--secondary" routerLink="/quienes-somos">Quiénes somos</a>
+        <a class="button button--outline" routerLink="/federaciones">Federaciones</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container narrow center">
+      <h2>RED VECINAL ANDALUZA</h2>
+      <span class="section-rule"></span>
+      @for (paragraph of aboutIntro; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+      <a class="text-link text-link--spaced" routerLink="/quienes-somos">Leer la presentación completa</a>
+      <app-ceav-callout />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Objetivos y fines sociales</h2>
+        <p>Principios de trabajo para defender derechos, barrios y participación ciudadana.</p>
+      </div>
+      <div class="goal-grid">
+        @for (goal of goals; track goal.title) {
+          <article class="goal-card" [style.--accent]="goal.accent">
+            <span class="icon-pill" aria-hidden="true">
+              <svg [attr.viewBox]="goal.icon.viewBox" focusable="false">
+                @for (path of goal.icon.paths; track path) {
+                  <path [attr.d]="path"></path>
+                }
+              </svg>
+            </span>
+            <h3>{{ goal.title }}</h3>
+            <p>{{ goal.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container">
+      <div class="section-heading section-heading--split">
+        <div>
+          <h2>Últimas noticias</h2>
+          <p>Actualidad sobre el movimiento vecinal andaluz.</p>
+        </div>
+        <a class="text-link" routerLink="/noticias">Ver todas</a>
+      </div>
+      <div class="news-grid news-grid--three">
+        @for (article of latestNews; track article.slug) {
+          <article class="news-card">
+            <img [src]="article.image" [alt]="article.title" />
+            <div class="news-card__body">
+              <span class="badge">{{ article.category }}</span>
+              <time>{{ article.date }}</time>
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.excerpt }}</p>
+              <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer más</a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>

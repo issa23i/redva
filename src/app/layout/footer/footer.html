@@ -1,1 +1,126 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <div class="site-footer__main app-container">
+    <section class="site-footer__brand" aria-label="RedVA">
+      <div class="footer-logo">
+        <img [src]="logoPath" alt="RedVA" />
+        <span>RedVA</span>
+      </div>
+      <p>
+        Trabajando por una Andalucia mas justa, participativa y conectada a
+        traves del movimiento vecinal.
+      </p>
+      <div class="social-links" aria-label="Redes sociales">
+        <a
+          href="mailto:info@redvecinalandaluza.org"
+          aria-label="Correo"
+          title="Correo"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 6h16v12H4V6Zm2 2v.4l6 4.1 6-4.1V8H6Zm12 8v-5.2l-6 4.1-6-4.1V16h12Z"
+            />
+          </svg>
+        </a>
+        <a
+          [href]="
+            'https://www.facebook.com/sharer/sharer.php?u=' +
+            encodedSiteUrl +
+            '&quote=' +
+            encodedSiteShareText
+          "
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Compartir en Facebook"
+          title="Facebook"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1Z"
+            />
+          </svg>
+        </a>
+        <a
+          [href]="
+            'https://bsky.app/intent/compose?text=' +
+            encodedSiteShareText +
+            '%0A%0A' +
+            encodedSiteUrl
+          "
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Compartir en Bluesky"
+          title="Bluesky"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6.1 4.4C8.5 6.2 11 9.8 12 11.8c1-2 3.5-5.6 5.9-7.4 1.7-1.3 4.5-2.3 4.5.9 0 .6-.4 5.3-.7 6.1-.9 3.1-4.1 3.9-7 3.4 5 .9 6.3 4 3.5 7.1-5.3 5.8-7.6-1.5-8.2-3.4-.1-.4-.2-.6-.3-.6s-.2.2-.3.6c-.6 1.9-2.9 9.2-8.2 3.4-2.8-3.1-1.5-6.2 3.5-7.1-2.9.5-6.1-.3-7-3.4-.3-.8-.7-5.5-.7-6.1 0-3.2 2.8-2.2 4.5-.9Z"
+            />
+          </svg>
+        </a>
+        <a
+          [href]="
+            'https://api.whatsapp.com/send?text=' +
+            encodedSiteTitle +
+            '%20' +
+            encodedSiteUrl
+          "
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Compartir en WhatsApp"
+          title="WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 3.5a8.3 8.3 0 0 0-7.1 12.6L4 20.5l4.5-1a8.2 8.2 0 0 0 3.5.8 8.4 8.4 0 0 0 0-16.8Zm0 14.9c-1.1 0-2.1-.3-3-.8l-.3-.2-2.1.5.5-2.1-.2-.3A6.5 6.5 0 1 1 12 18.4Zm3.7-4.8c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4l-.6-1.4c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5.5.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.3-.2-.5-.3Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Federaciones</h2>
+      <div class="footer-grid">
+        @for (federation of federations; track federation.province) {
+          <a routerLink="/federaciones" fragment="directorio">{{
+            federation.province
+          }}</a>
+        }
+      </div>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <address>
+        Calle Resolana, 8. Sevilla. Andalucía<br />
+        info&#64;redvecinalandaluza.org<br />
+        +34 954 03 53 88
+      </address>
+    </section>
+
+    <section>
+      <h2>Recursos</h2>
+      <a routerLink="/aviso-legal">Aviso legal</a>
+      <a routerLink="/privacidad">Privacidad</a>
+      <button
+        class="footer-link-button"
+        type="button"
+        (click)="openAccessibilityPanel()"
+      >
+        Accesibilidad
+      </button>
+    </section>
+  </div>
+
+  <div class="site-footer__legal app-container">
+    <span
+      >© 2026 Confederacion RED VECINAL ANDALUZA (RedVA). Todos los derechos
+      reservados.</span
+    >
+    <div>
+      <a href="https://isabelpastorlopez.com/"
+        >Web realizada por Isabel Pastor López</a
+      >
+    </div>
+  </div>
+</footer>

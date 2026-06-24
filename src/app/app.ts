@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Footer } from './layout/footer/footer';
+import { Header } from './layout/header/header';
+import { AccessibilityWidget } from './shared/accessibility-widget/accessibility-widget';
+import { SeoService } from './shared/seo.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [AccessibilityWidget, Footer, Header, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'redva-web';
+  constructor(seo: SeoService) {
+    seo.init();
+  }
 }

@@ -1,1 +1,288 @@
-<p>ilp works!</p>
+<main>
+  <section class="ilp-hero section--soft">
+    <div class="app-container ilp-hero__grid">
+      <div>
+        <span class="badge badge--blue">Iniciativa Ciudadana</span>
+        <h1>
+          Iniciativa Legislativa Popular (ILP) por una
+          <span>Vivienda digna</span>
+        </h1>
+        <p>
+          Andalucía se enfrenta a una emergencia habitacional provocada por la
+          subida sostenida de precios, la turistificación, la escasez de
+          vivienda pública y la desconexión entre salarios y mercado
+          inmobiliario. Es hora de que la ciudadanía tome la palabra para
+          garantizar el derecho constitucional a un hogar.
+        </p>
+        <div class="button-row">
+          <!--
+        TODO: LINK FIRMA
+          <a class="button button--primary" href="#firmar"
+            >Firmar la iniciativa</a
+          >
+          <a class="button button--outline" href="#ley">Descargar ley</a>
+
+      -->
+          <a class="button button--primary" href="ilp-vivienda#firmar"
+            >Firmar la iniciativa</a
+          >
+          <a
+            class="button button--outline"
+            href="assets/redva/doc_ilp.pdf"
+            download="doc_ilp.pdf"
+            >Descargar ley</a
+          >
+        </div>
+      </div>
+      <figure class="framed-image">
+        <img
+          [src]="heroImage"
+          alt="Representantes sociales registrando la ILP por una vivienda digna"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section id="ley" class="section section--soft">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Que no te cuenten películas</h2>
+        <p>
+          La ILP parte de una idea sencilla: la vivienda no puede tratarse solo
+          como una mercancía cuando condiciona la vida, el arraigo y la
+          igualdad.
+        </p>
+      </div>
+      <article class="split-panel">
+        <div>
+          <h3>Proposición de Ley de Garantía Habitacional y Función Social</h3>
+          <p>
+            La propuesta plantea reconocer la vivienda como un servicio de
+            interés general y activar instrumentos públicos para garantizar el
+            acceso a una vivienda digna, adecuada, asequible y accesible en
+            Andalucía.
+          </p>
+          <p>
+            Su objetivo es que las familias no tengan que destinar más del 30%
+            de sus ingresos al hogar y que el uso residencial prevalezca frente
+            a la especulación y el alquiler turístico descontrolado.
+          </p>
+          <ul class="check-list">
+            <li>Declaración de zonas tensionadas</li>
+            <li>Precios máximos vinculados a la realidad salarial local</li>
+            <li>Movilización de viviendas vacías</li>
+            <li>Protección permanente del parque público y de la VPO</li>
+          </ul>
+        </div>
+        <img [src]="urbanImage" alt="Edificio urbano en blanco y negro" />
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container ilp-detail">
+      <div class="section-heading section-heading--split">
+        <div>
+          <span class="eyebrow">Memoria justificativa</span>
+          <h2>Por qué hace falta una ley andaluza de vivienda</h2>
+        </div>
+        <p>
+          La iniciativa se apoya en el artículo 47 de la Constitución, el
+          Estatuto de Autonomía de Andalucía y los compromisos internacionales
+          sobre el derecho a una vivienda adecuada.
+        </p>
+      </div>
+
+      <div class="ilp-detail__grid">
+        <article class="ilp-text-block">
+          <h3>Un derecho reconocido, una realidad incumplida</h3>
+          <p>
+            La Constitución Española reconoce el derecho de la ciudadanía a una
+            vivienda digna y adecuada, y obliga a los poderes públicos a regular
+            el uso del suelo de acuerdo con el interés general para impedir la
+            especulación. También subordina la propiedad privada a su función
+            social, lo que legitima la intervención pública cuando están en
+            juego necesidades básicas.
+          </p>
+          <p>
+            En Andalucía, el Estatuto de Autonomía refuerza ese mandato al
+            reconocer el derecho de acceso a una vivienda digna y atribuir a la
+            Comunidad Autónoma competencias exclusivas en materia de vivienda.
+            Por eso, la ILP reclama que la Junta asuma una política directa,
+            estable y valiente ante la emergencia habitacional.
+          </p>
+        </article>
+
+        <article class="ilp-text-block">
+          <h3>Emergencia habitacional y desigualdad</h3>
+          <p>
+            La crisis de vivienda afecta de forma especial a jóvenes, mujeres,
+            familias trabajadoras y barrios con mayores desigualdades sociales.
+            El aumento de precios de compra y alquiler, la expansión de
+            viviendas turísticas, la inversión inmobiliaria orientada a rentas y
+            la insuficiencia del parque público han roto el equilibrio entre el
+            mercado y la capacidad económica real de la población.
+          </p>
+          <p>
+            Esta situación expulsa a vecinas y vecinos de sus barrios, debilita
+            el arraigo, dificulta la emancipación juvenil y agrava la
+            segregación social. La memoria de la ILP advierte también de la
+            necesidad de rehabilitar de forma integral las barriadas periféricas
+            y las zonas donde se concentran mayores problemas de conservación,
+            accesibilidad y mantenimiento.
+          </p>
+        </article>
+      </div>
+
+      <div
+        class="ilp-stats"
+        aria-label="Datos clave de la emergencia habitacional"
+      >
+        <article>
+          <strong>39,5%</strong>
+          <span>del salario medio se destina al alquiler en Andalucía.</span>
+        </article>
+        <article>
+          <strong>45,2%</strong>
+          <span
+            >del salario de las mujeres andaluzas se dedica al alquiler.</span
+          >
+        </article>
+        <article>
+          <strong>+600.000</strong>
+          <span>viviendas desocupadas estimadas en Andalucía.</span>
+        </article>
+        <article>
+          <strong>439.468</strong>
+          <span>solicitudes en registros de demandantes de vivienda.</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="app-container ilp-measures">
+      <div class="section-heading center">
+        <h2>Qué propone la ILP</h2>
+        <p>
+          La proposición de ley combina intervención pública, protección del
+          parque residencial y financiación estable para que la vivienda cumpla
+          su función social.
+        </p>
+      </div>
+
+      <div class="ilp-measures__grid">
+        <article>
+          <h3>Intervenir el mercado</h3>
+          <p>
+            Declarar zonas tensionadas y fijar precios máximos de alquiler y
+            compra vinculados a la realidad salarial de cada territorio.
+          </p>
+        </article>
+        <article>
+          <h3>Blindar la vivienda protegida</h3>
+          <p>
+            Mantener la calificación permanente de la VPO, impedir su venta a
+            fondos de inversión y reforzar el parque público de vivienda.
+          </p>
+        </article>
+        <article>
+          <h3>Movilizar vivienda vacía</h3>
+          <p>
+            Crear un registro de viviendas vacías y un canon autonómico
+            progresivo para inmuebles desocupados injustificadamente durante más
+            de dos años.
+          </p>
+        </article>
+        <article>
+          <h3>Financiación estable</h3>
+          <p>
+            Impulsar un Fondo Andaluz de Garantía Habitacional con presupuesto
+            estable, fondos públicos, ingresos vinculados a vivienda y una tasa
+            turística por pernoctación.
+          </p>
+        </article>
+        <article>
+          <h3>Uso residencial primero</h3>
+          <p>
+            Limitar nuevas licencias de viviendas turísticas y suspenderlas en
+            zonas tensionadas mientras persista la emergencia habitacional.
+          </p>
+        </article>
+        <article>
+          <h3>Arraigo y barrios vivos</h3>
+          <p>
+            Frenar la gentrificación, proteger la convivencia vecinal y defender
+            que Andalucía sea refugio de su gente, no un espacio gobernado por
+            la especulación.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="app-container ilp-info-grid">
+      <article class="info-card info-card--blue">
+        <h3>Qué es la ILP</h3>
+        <p>
+          Es la herramienta de participación ciudadana que permite presentar una
+          proposición de ley ante el Parlamento de Andalucía con el respaldo de
+          firmas suficientes.
+        </p>
+      </article>
+      <article class="info-card info-card--image">
+        <div>
+          <h3>Objetivos de la Ley</h3>
+          <p>
+            Garantizar el derecho efectivo a la vivienda, reforzar su función
+            social, contener la especulación y asegurar que el hogar no consuma
+            una parte insoportable de los ingresos familiares.
+          </p>
+        </div>
+        <img [src]="communityImage" alt="Espacio comunitario luminoso" />
+      </article>
+      <article class="info-card">
+        <h3>Cómo participar</h3>
+        <p>
+          Únete a las asambleas locales, ayuda en la recogida de firmas,
+          comparte materiales informativos o lleva el debate a tu asociación,
+          barrio, centro de trabajo o espacio comunitario.
+        </p>
+      </article>
+      <article id="firmar" class="signature-card">
+        <h3>Necesitamos 40.000 firmas</h3>
+        <p>Tu firma es decisiva.</p>
+        <!-- 
+        TODO: LINK FIRMA 
+        <a class="button button--lime" href="mailto:info@redvecinalandaluza.org"
+          >Firmar Digitalmente</a
+        >
+        -->
+        <a
+          class="button button--lime"
+          href="/ilp-vivienda#firmar"
+          title="Disponible en breve"
+          >Firmar digitalmente</a
+        >
+        <small>Disponible en breve</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="collaborators">
+    <p>En colaboración con</p>
+    <div>
+      @for (collaborator of collaborators; track collaborator.image) {
+        <a
+          class="collaborators__logo"
+          [href]="collaborator.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img [src]="collaborator.image" [alt]="collaborator.alt" />
+        </a>
+      }
+    </div>
+  </section>
+</main>

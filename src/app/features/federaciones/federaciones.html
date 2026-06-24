@@ -1,1 +1,81 @@
-<p>federaciones works!</p>
+<main>
+  <section class="hero hero--compact">
+    <img class="hero__image" [src]="heroImage" alt="Representantes vecinales andaluces" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content app-container">
+      <span class="eyebrow">Federaciones</span>
+      <h1>Entidades federadas de la Red Vecinal Andaluza</h1>
+      <p>Confederaciones y federaciones territoriales de asociaciones vecinales integradas en RedVA.</p>
+      <div class="button-row">
+        <a class="button button--secondary" routerLink="/federaciones" fragment="directorio">Ver directorio</a>
+        <a class="button button--outline" routerLink="/quienes-somos">Quiénes somos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="directorio" class="section section--white">
+    <div class="app-container">
+      <div class="section-heading center">
+        <h2>Nuestras federaciones miembro</h2>
+        <span class="section-rule"></span>
+        <p>
+          La RedVA aglutina organizaciones vecinales de Andalucía que trabajan coordinadamente para defender derechos,
+          participación ciudadana y calidad de vida en los barrios.
+        </p>
+      </div>
+      <div class="federation-grid">
+        @for (federation of federations; track federation.province) {
+          <article class="federation-card" [id]="federationFragment(federation)">
+            <h3>{{ federation.province }}</h3>
+            <h4>{{ federation.name }}</h4>
+            <p>{{ federation.description }}</p>
+            @if (federation.address) {
+              <p class="meta">{{ federation.address }}</p>
+            }
+            @if (federation.phone) {
+              <p class="meta">{{ federation.phone }}</p>
+            }
+            @if (federation.email) {
+              <p class="meta">{{ federation.email }}</p>
+            }
+            @if (federation.website) {
+              <p class="meta">
+                <a [href]="websiteUrl(federation.website)" target="_blank" rel="noopener noreferrer">
+                  {{ federation.website }}
+                </a>
+              </p>
+            }
+            <span>Miembro CEAV</span>
+          </article>
+        }
+      </div>
+      <app-ceav-callout />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="app-container">
+      <div class="section-heading section-heading--split">
+        <div>
+          <h2>Últimas noticias</h2>
+          <p>Actualidad sobre el movimiento vecinal andaluz.</p>
+        </div>
+        <a class="text-link" routerLink="/noticias">Ver todas</a>
+      </div>
+      <div class="news-grid news-grid--three">
+        @for (article of latestNews; track article.slug) {
+          <article class="news-card">
+            <img [src]="article.image" [alt]="article.title" />
+            <div class="news-card__body">
+              <span class="badge">{{ article.category }}</span>
+              <time>{{ article.date }}</time>
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.excerpt }}</p>
+              <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer más</a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>
