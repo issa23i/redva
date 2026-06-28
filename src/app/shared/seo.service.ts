@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+﻿import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -11,15 +11,15 @@ export interface SeoRouteData {
 }
 
 const siteName = 'Red Vecinal Andaluza';
+const primaryOrigin = 'https://www.redvecinalandaluza.org';
 const defaultKeywords = [
   'Red Vecinal Andaluza',
   'RedVA',
   'AAVV',
-  'Asociaciónes de vecinos y vecinas',
   'Asociaciones de vecinos y vecinas',
   'asociaciones vecinales',
   'movimiento vecinal andaluz',
-  'Andalucía',
+  'AndalucÃ­a',
 ];
 
 @Injectable({ providedIn: 'root' })
@@ -31,13 +31,21 @@ export class SeoService {
   private readonly title = inject(Title);
 
   init(): void {
-    this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe(() => {
-      const seo = this.getDeepestRoute(this.activatedRoute).snapshot.data['seo'] as SeoRouteData | undefined;
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd,
+        ),
+      )
+      .subscribe(() => {
+        const seo = this.getDeepestRoute(this.activatedRoute).snapshot.data[
+          'seo'
+        ] as SeoRouteData | undefined;
 
-      if (seo) {
-        this.update(seo);
-      }
-    });
+        if (seo) {
+          this.update(seo);
+        }
+      });
   }
 
   update(seo: SeoRouteData): void {
@@ -52,11 +60,32 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:site_name', content: siteName });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:title', content: fullTitle });
-    this.meta.updateTag({ property: 'og:description', content: seo.description });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: seo.description,
+    });
     this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: `${primaryOrigin}/assets/redva/logo-redva.png`,
+    });
+    this.meta.updateTag({
+      property: 'og:image:alt',
+      content: 'Logotipo de Red Vecinal Andaluza',
+    });
+    this.meta.updateTag({
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    });
     this.meta.updateTag({ name: 'twitter:title', content: fullTitle });
-    this.meta.updateTag({ name: 'twitter:description', content: seo.description });
+    this.meta.updateTag({
+      name: 'twitter:description',
+      content: seo.description,
+    });
+    this.meta.updateTag({
+      name: 'twitter:image',
+      content: `${primaryOrigin}/assets/redva/logo-redva.png`,
+    });
     this.setCanonical(canonicalUrl);
   }
 
@@ -74,7 +103,9 @@ export class SeoService {
   }
 
   private setCanonical(url: string): void {
-    let link = this.document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    let link = this.document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
 
     if (!link) {
       link = this.document.createElement('link');
