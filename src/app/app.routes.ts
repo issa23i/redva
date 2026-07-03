@@ -18,21 +18,21 @@ export const routes: Routes = [
       seo: {
         title: 'Red Vecinal Andaluza',
         description:
-          'Red Vecinal Andaluza, ConfederaciÃ³n de Asociaciones Vecinales de AndalucÃ­a para AAVV y asociaciones de vecinos y vecinas.',
-        keywords: ['inicio RedVA', 'ConfederaciÃ³n de Asociaciones Vecinales de AndalucÃ­a'],
+          'Red Vecinal Andaluza, Confederación de Asociaciones Vecinales de Andalucía para AAVV y asociaciones de vecinos y vecinas.',
+        keywords: ['inicio RedVA', 'Confederación de Asociaciones Vecinales de Andalucía'],
       },
     },
   },
   {
     path: 'quienes-somos',
     component: QuienesSomos,
-    title: 'QuiÃ©nes somos - Red Vecinal Andaluza',
+    title: 'Quiénes somos - Red Vecinal Andaluza',
     data: {
       seo: {
-        title: 'QuiÃ©nes somos',
+        title: 'Quiénes somos',
         description:
-          'Conoce la Red Vecinal Andaluza: ConfederaciÃ³n de Asociaciones Vecinales de AndalucÃ­a, AAVV y asociaciones de vecinos y vecinas.',
-        keywords: ['quiÃ©nes somos', 'ConfederaciÃ³n de Asociaciones Vecinales de AndalucÃ­a', 'participaciÃ³n ciudadana'],
+          'Conoce la Red Vecinal Andaluza: Confederación de Asociaciones Vecinales de Andalucía, AAVV y asociaciones de vecinos y vecinas.',
+        keywords: ['quiénes somos', 'Confederación de Asociaciones Vecinales de Andalucía', 'participación ciudadana'],
       },
     },
   },
@@ -44,7 +44,7 @@ export const routes: Routes = [
       seo: {
         title: 'Federaciones',
         description:
-          'Directorio de federaciones y entidades federadas de RedVA, AAVV y asociaciones de vecinos y vecinas en AndalucÃ­a.',
+          'Directorio de federaciones y entidades federadas de RedVA, AAVV y asociaciones de vecinos y vecinas en Andalucía.',
         keywords: ['federaciones vecinales', 'entidades federadas', 'directorio AAVV'],
       },
     },
@@ -52,13 +52,13 @@ export const routes: Routes = [
   {
     path: 'decalogo',
     component: Decalogo,
-    title: 'DecÃ¡logo - Red Vecinal Andaluza',
+    title: 'Decálogo - Red Vecinal Andaluza',
     data: {
       seo: {
-        title: 'DecÃ¡logo',
+        title: 'Decálogo',
         description:
-          'DecÃ¡logo de Red Vecinal Andaluza para la unidad del movimiento vecinal andaluz, las AAVV y asociaciones de vecinos y vecinas.',
-        keywords: ['decÃ¡logo vecinal', 'movimiento vecinal andaluz', 'unidad vecinal'],
+          'Decálogo de Red Vecinal Andaluza para la unidad del movimiento vecinal andaluz, las AAVV y asociaciones de vecinos y vecinas.',
+        keywords: ['decálogo vecinal', 'movimiento vecinal andaluz', 'unidad vecinal'],
       },
     },
   },
