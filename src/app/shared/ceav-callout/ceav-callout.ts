@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="assets/redva/logo-ceav.png" alt="CEAV" />
+        <img src="assets/redva/logo-ceav.png" alt="CEAV" width="211" height="227" loading="lazy" decoding="async" />
         <div>
           <h3>Confederaci&oacute;n Estatal de Asociaciones Vecinales</h3>
           <p>

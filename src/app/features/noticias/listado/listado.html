@@ -3,7 +3,7 @@
     @if (featuredArticle) {
       <article class="featured-news">
         <div class="featured-news__image">
-          <img [src]="featuredArticle.image" [alt]="featuredArticle.title" />
+          <img [src]="featuredArticle.image" [alt]="featuredArticle.title" fetchpriority="high" decoding="async" />
           <span class="badge badge--blue">Destacado</span>
         </div>
         <div class="featured-news__body">
@@ -20,7 +20,7 @@
     <div class="news-grid">
       @for (article of paginatedArticles; track article.slug) {
         <article class="news-card">
-          <img [src]="article.image" [alt]="article.title" />
+          <img [src]="article.image" [alt]="article.title" loading="lazy" decoding="async" />
           <div class="news-card__body">
             <div class="news-card__meta">
               <span class="badge">{{ article.category }}</span>

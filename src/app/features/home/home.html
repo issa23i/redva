@@ -1,13 +1,28 @@
 <main>
   <section class="hero hero--home">
-    <img class="hero__image" [src]="heroImage" alt="Grupo vecinal andaluz en una avenida soleada" />
+    <img
+      class="hero__image"
+      [src]="heroImage"
+      alt="Grupo vecinal andaluz en una avenida soleada"
+      width="1080"
+      height="608"
+      fetchpriority="high"
+      decoding="async"
+    />
     <div class="hero__overlay"></div>
     <div class="hero__content app-container">
       <h1>Confederación RED VECINAL ANDALUZA (RedVA)</h1>
-      <p>Confederación de Asociaciones Vecinales de Andalucía. AAVV - Asociaciones de vecinos y vecinas.</p>
+      <p>
+        Confederación de Asociaciones Vecinales de Andalucía. AAVV -
+        Asociaciones de vecinos y vecinas.
+      </p>
       <div class="button-row">
-        <a class="button button--secondary" routerLink="/quienes-somos">Quiénes somos</a>
-        <a class="button button--outline" routerLink="/federaciones">Federaciones</a>
+        <a class="button button--secondary" routerLink="/quienes-somos"
+          >Quiénes somos</a
+        >
+        <a class="button button--outline" routerLink="/federaciones"
+          >Federaciones</a
+        >
       </div>
     </div>
   </section>
@@ -19,7 +34,9 @@
       @for (paragraph of aboutIntro; track paragraph) {
         <p>{{ paragraph }}</p>
       }
-      <a class="text-link text-link--spaced" routerLink="/quienes-somos">Leer la presentación completa</a>
+      <a class="text-link text-link--spaced" routerLink="/quienes-somos"
+        >Leer la presentación completa</a
+      >
       <app-ceav-callout />
     </div>
   </section>
@@ -28,7 +45,10 @@
     <div class="app-container">
       <div class="section-heading center">
         <h2>Objetivos y fines sociales</h2>
-        <p>Principios de trabajo para defender derechos, barrios y participación ciudadana.</p>
+        <p>
+          Principios de trabajo para defender derechos, barrios y participación
+          ciudadana.
+        </p>
       </div>
       <div class="goal-grid">
         @for (goal of goals; track goal.title) {
@@ -66,7 +86,9 @@
               <time>{{ article.date }}</time>
               <h3>{{ article.title }}</h3>
               <p>{{ article.excerpt }}</p>
-              <a class="text-link" [routerLink]="['/noticias', article.slug]">Leer más</a>
+              <a class="text-link" [routerLink]="['/noticias', article.slug]"
+                >Leer más</a
+              >
             </div>
           </article>
         }

@@ -1,18 +1,9 @@
-﻿import { Routes } from '@angular/router';
-import { AvisoLegal } from './features/aviso-legal/aviso-legal';
-import { Decalogo } from './features/decalogo/decalogo';
-import { Federaciones } from './features/federaciones/federaciones';
-import { Home } from './features/home/home';
-import { Ilp } from './features/ilp/ilp';
-import { Detalle } from './features/noticias/detalle/detalle';
-import { Listado } from './features/noticias/listado/listado';
-import { Privacidad } from './features/privacidad/privacidad';
-import { QuienesSomos } from './features/quienes-somos/quienes-somos';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
     path: '',
-    component: Home,
+    loadComponent: () => import('./features/home/home').then((m) => m.Home),
     title: 'Inicio - Red Vecinal Andaluza',
     data: {
       seo: {
@@ -25,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'quienes-somos',
-    component: QuienesSomos,
+    loadComponent: () => import('./features/quienes-somos/quienes-somos').then((m) => m.QuienesSomos),
     title: 'Quiénes somos - Red Vecinal Andaluza',
     data: {
       seo: {
@@ -38,7 +29,7 @@ export const routes: Routes = [
   },
   {
     path: 'federaciones',
-    component: Federaciones,
+    loadComponent: () => import('./features/federaciones/federaciones').then((m) => m.Federaciones),
     title: 'Federaciones - RedVA',
     data: {
       seo: {
@@ -51,7 +42,7 @@ export const routes: Routes = [
   },
   {
     path: 'decalogo',
-    component: Decalogo,
+    loadComponent: () => import('./features/decalogo/decalogo').then((m) => m.Decalogo),
     title: 'Decálogo - Red Vecinal Andaluza',
     data: {
       seo: {
@@ -64,7 +55,7 @@ export const routes: Routes = [
   },
   {
     path: 'ilp-vivienda',
-    component: Ilp,
+    loadComponent: () => import('./features/ilp/ilp').then((m) => m.Ilp),
     title: 'ILP Vivienda - RedVA',
     data: {
       seo: {
@@ -82,7 +73,7 @@ export const routes: Routes = [
   },
   {
     path: 'privacidad',
-    component: Privacidad,
+    loadComponent: () => import('./features/privacidad/privacidad').then((m) => m.Privacidad),
     title: 'Privacidad - RedVA',
     data: {
       seo: {
@@ -95,7 +86,7 @@ export const routes: Routes = [
   },
   {
     path: 'aviso-legal',
-    component: AvisoLegal,
+    loadComponent: () => import('./features/aviso-legal/aviso-legal').then((m) => m.AvisoLegal),
     title: 'Aviso legal - RedVA',
     data: {
       seo: {
@@ -111,7 +102,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: Listado,
+        loadComponent: () => import('./features/noticias/listado/listado').then((m) => m.Listado),
         title: 'Noticias - RedVA',
         data: {
           seo: {
@@ -124,7 +115,7 @@ export const routes: Routes = [
       },
       {
         path: ':slug',
-        component: Detalle,
+        loadComponent: () => import('./features/noticias/detalle/detalle').then((m) => m.Detalle),
         title: 'Noticia - RedVA',
       },
     ],
@@ -134,4 +125,3 @@ export const routes: Routes = [
     redirectTo: '',
   },
 ];
-

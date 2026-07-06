@@ -11,5 +11,5 @@ export class Decalogo {
   protected readonly intro = decalogueIntro;
   protected readonly publicSystem = decaloguePublicSystem;
   protected readonly points = decaloguePoints;
-  protected readonly heroImage = 'assets/redva/sidebar-arches.png';
+  protected readonly heroImage = 'assets/redva/constitucionredvalandpatio.jpg';
 }
