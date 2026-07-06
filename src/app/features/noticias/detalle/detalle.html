@@ -10,7 +10,7 @@
         <time>{{ article.date }}</time>
       </div>
       <h1>{{ article.title }}</h1>
-      <img class="article-hero" [src]="article.image" [alt]="article.title" />
+      <img class="article-hero" [src]="article.image" [alt]="article.title" width="1080" height="608" fetchpriority="high" decoding="async" />
       <p class="lead">{{ article.excerpt }}</p>
       @for (paragraph of article.body; track paragraph) {
         <p>{{ paragraph }}</p>
@@ -76,7 +76,7 @@
           [href]="'/noticias/' + preview.slug"
           (click)="openArticle($event, preview)"
         >
-          <img [src]="preview.image" [alt]="preview.title" />
+          <img [src]="preview.image" [alt]="preview.title" width="1080" height="608" loading="lazy" decoding="async" />
         </a>
       }
       @for (related of relatedArticles; track related.slug) {
